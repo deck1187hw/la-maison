@@ -224,6 +224,13 @@ export default {
       documentId: null
     };
   },
+  created() {
+       if (process.browser) {
+        let sc1 = document.createElement("script");
+        sc1.setAttribute("src", "/js/scripts.js");
+        document.body.appendChild(sc1);
+      }
+  },
   async asyncData({ context, error, req }) {
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });

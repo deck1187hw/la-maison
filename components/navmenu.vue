@@ -31,64 +31,32 @@
             </div>
             <div class="col-lg-5 order-lg-1">
               <div class="bar__module">
-                <ul class="menu-horizontal text-left">
-                  <li>
-                    <a href="#">Single</a>
-                  </li>
-                  <li class="dropdown">
-                    <span class="dropdown__trigger">Dropdown Slim</span>
-                    <div class="dropdown__container">
+                <ul class="menu-horizontal text-left" v-if="navigation">
+                  <li
+                    v-for="(item, index) in navigation.nav"
+                    :key="index"
+                    v-bind:class="{ dropdown: item.items.length > 0 }"
+                  >
+                    <nuxt-link
+                      v-if="item.items.length === 0"
+                      :to="item.primary.sub_navi_link"
+                    >{{item.primary.label[0].text}}</nuxt-link>
+                    <span
+                      class="dropdown__trigger"
+                      v-if="item.items.length > 0"
+                    >{{item.primary.label[0].text}}</span>
+                    <div class="dropdown__container" v-if="item.items.length > 0">
                       <div class="container">
                         <div class="row">
                           <div class="dropdown__content col-lg-2">
                             <ul class="menu-vertical">
-                              <li>
-                                <a href="#">Single Link</a>
+                              <li v-for="(subitem, indexs) in item.items" :key="indexs">
+                                <nuxt-link
+                                  v-if="subitem.sub_nav_link_label.length>0"
+                                  :to="subitem.sub_navi_link"
+                                >{{subitem.sub_nav_link_label[0].text}}</nuxt-link>
                               </li>
                             </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="dropdown">
-                    <span class="dropdown__trigger">Dropdown Wide</span>
-                    <div class="dropdown__container">
-                      <div class="container">
-                        <div class="row">
-                          <div class="dropdown__content col-lg-12 row w-100">
-                            <div class="col-lg-3">
-                              <h5>Menu Title</h5>
-                              <ul class="menu-vertical">
-                                <li>
-                                  <a href="#">Single Link</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-lg-3">
-                              <h5>Menu Title</h5>
-                              <ul class="menu-vertical">
-                                <li>
-                                  <a href="#">Single Link</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-lg-3">
-                              <h5>Menu Title</h5>
-                              <ul class="menu-vertical">
-                                <li>
-                                  <a href="#">Single Link</a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-lg-3">
-                              <h5>Menu Title</h5>
-                              <ul class="menu-vertical">
-                                <li>
-                                  <a href="#">Single Link</a>
-                                </li>
-                              </ul>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -110,9 +78,28 @@
     </div>
   </div>
 </template>
+<script>
+import Prismic from "prismic-javascript";
+import PrismicConfig from "~/prismic.config.js";
+
+export default {
+  components: {},
+  data: function() {
+    return {
+      document: null,
+      documentId: null
+    };
+  },
+  computed: {
+    navigation() {
+      return this.$store.getters.navigation;
+    }
+  }
+};
+</script>
 <style scoped>
-.bar{
-  padding:1em 0
+.bar {
+  padding: 1em 0;
 }
 .bar .logo {
   max-height: inherit;

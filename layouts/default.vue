@@ -16,11 +16,7 @@ export default {
     footera
   },
   created() {
-    if (process.browser) {
-      let sc1 = document.createElement("script");
-      sc1.setAttribute("src", "/js/scripts.js");
-      document.body.appendChild(sc1);
-    }
+ 
   },
   mounted() {}
 };
