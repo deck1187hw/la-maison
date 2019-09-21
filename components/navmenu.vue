@@ -99,7 +99,7 @@
             </div>
             <div class="col-lg-5 text-right text-left-xs text-left-sm order-lg-3">
               <div class="bar__module">
-                <a class="btn btn--sm type--uppercase" href="#">
+                <a class="btn btn--sm type--uppercase btn--primary" href="#">
                   <span class="btn__text">Contact us</span>
                 </a>
               </div>

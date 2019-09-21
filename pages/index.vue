@@ -1,10 +1,6 @@
 <template>
   <div class="main-container">
-    {{documentId}}
-    <prismic-edit-button :documentId="documentId" />
-    <pre>
-      {{document}}
-    </pre>
+   
     <section class="cover imagebg text-center height-80 section--ken-burns" data-overlay="5">
       <div class="background-image-holder">
         <img alt="background" src="img/head1.jpg" />
@@ -89,8 +85,8 @@
             <div class="text-block">
               <p>Exquisite food and impeccable service can make your party even more memorable and unique. LA MAISON Mobile BBQ Catering recommends your barbecue meal to be cooked in front of the quests and served buffet style. The main reason for this is that we strongly believe it is a good fit for a bbq style menu – It allows your guests to customise what they want on their plates in terms of both quantity and selection from the barbecue wedding buffet!</p>
               <p>
-                <a class="btn btn--sm type--uppercase" href="#">
-                  <span class="btn__text">View our menu</span>
+               <a class="btn btn--lg btn--primary type--uppercase" href="#">
+                  <span class="btn__text"><i class="icon-cup icons"></i> View our menu</span>
                 </a>
               </p>
             </div>
@@ -143,11 +139,11 @@
             </article>
           </div>
         </div>
-        <div class="row">
+        <div class="row text-center">
           <div class="col">
-                          <p>
-                <a class="btn btn--sm type--uppercase" href="#">
-                  <span class="btn__text">View our menu</span>
+              <p>
+                <a class="btn btn--lg btn--primary type--uppercase" href="#">
+                  <span class="btn__text"><i class="icon-docs icons"></i> View our blog</span>
                 </a>
               </p>
           </div>
@@ -209,6 +205,7 @@
         </div>
       </div>
     </section>
+        <prismic-edit-button :documentId="documentId" />
   </div>
 </template>
 
