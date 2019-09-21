@@ -4,9 +4,9 @@
                     <div class="row">
                         <div class="col-sm-7">
                             <ul class="list-inline">
-                                <li> <a href="#"><span class="h6 type--uppercase">About</span></a> </li>
-                                <li> <a href="#"><span class="h6 type--uppercase">Careers</span></a> </li>
-                                <li> <a href="#"><span class="h6 type--uppercase">Support</span></a> </li>
+                                <li> <nuxt-link to="/about"><span class="h6 type--uppercase">About us</span></nuxt-link> </li>
+                                <li> <nuxt-link to="/contact"><span class="h6 type--uppercase">Contact</span></nuxt-link> </li>
+                                <li> <nuxt-link to="/menus"><span class="h6 type--uppercase">Menus</span></nuxt-link>  </li>
                             </ul>
                         </div>
                         <div class="col-sm-5 text-right text-center-xs">
@@ -19,8 +19,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-7"> <span class="type--fine-print">© <span class="update-year"></span> Stack Inc.</span> <a class="type--fine-print" href="#">Privacy Policy</a> <a class="type--fine-print" href="#">Legal</a> </div>
-                        <div class="col-sm-5 text-right text-center-xs"> <a class="type--fine-print" href="#">support@stack.io</a> </div>
+                        <div class="col-sm-7"> <span class="type--fine-print">© <span class="update-year"></span> La Maison Mobile BBQ Service.</span> <a class="type--fine-print" href="#">Privacy Policy</a> <a class="type--fine-print" href="#">Legal</a> </div>
+                        <div class="col-sm-5 text-right text-center-xs"> <a class="type--fine-print" href="#">info@mobilebbqservice.com</a> </div>
                     </div>
                 </div>
             </footer>

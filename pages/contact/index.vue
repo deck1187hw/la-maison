@@ -6,7 +6,7 @@
                         <div class="col-md-8 col-lg-6">
                             <h1>Let's talk about your event</h1>
                             <p class="lead">
-                                Visit us in Melbourne or make contact via the form below to talk more about your project or idea.
+                                    We will customise it to meet your requirements.
                             </p>
                         </div>
                     </div>
@@ -40,66 +40,9 @@
                                         <span>About Project:</span>
                                         <textarea rows="5" name="description" class="validate-required"></textarea>
                                     </div>
-                                    <div class="col-md-12 text-center boxed">
-                                        <h5>Services Required</h5>
-                                    </div>
-                                    <div class="col-md-3 col-6 text-center">
-                                        <span class="block">Design</span>
-                                        <div class="input-checkbox">
-                                            <input type="checkbox" name="design" />
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-6 text-center">
-                                        <span class="block">Development</span>
-                                        <div class="input-checkbox">
-                                            <input type="checkbox" name="dev" />
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-6 text-center">
-                                        <span class="block">Branding</span>
-                                        <div class="input-checkbox">
-                                            <input type="checkbox" name="brand" />
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-6 text-center">
-                                        <span class="block">Marketing</span>
-                                        <div class="input-checkbox">
-                                            <input type="checkbox" name="marketing" />
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 text-center boxed">
-                                        <h5>Approximate Budget</h5>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <div class="input-radio">
-                                            <span>&lt; $5,000</span>
-                                            <input type="radio" name="budget" value="under5k" class="validate-required" />
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <div class="input-radio">
-                                            <span>$5,000 - $10,000</span>
-                                            <input type="radio" name="budget" value="5kto10k" class="validate-required" />
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <div class="input-radio">
-                                            <span>$10,000+</span>
-                                            <input type="radio" name="budget" value="10kplus" class="validate-required" />
-                                            <label></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-8 boxed">
-                                        <div class="recaptcha"></div>
-                                    </div>
+                                  
                                     <div class="col-md-12 boxed">
-                                        <button type="submit" class="btn btn--primary type--uppercase">Submit Planner</button>
+                                        <button type="submit" class="btn btn--primary type--uppercase">Submit</button>
                                     </div>
                                 </form>
                             </div>

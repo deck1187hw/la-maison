@@ -1,6 +1,5 @@
 <template>
   <div class="main-container">
-
     <section
       class="imageblock switchable feature-large bg--secondary space--sm"
       v-for="(item, index) in document.results"
@@ -18,14 +17,19 @@
             <h2>{{item.data.title[0].text}}</h2>
             <p
               class="lead"
-            >Stack offers a clean and contemporary to suit a range of purposes from corporate, tech startup, marketing site to digital storefront. Elements have been designed to showcase content in a diverse yet consistent manner.</p>
+            >Description about menu</p>
             <p>
               <nuxt-link class="btn btn--lg type--uppercase" :to="`/menus/${item.uid}`">
                 <span class="btn__text">View menu</span>
               </nuxt-link>
             </p>
             <p v-if="item.data.pdf_menu.url">
-                <i class="icon-doc icons"></i> <a :href="item.data.pdf_menu.url" target="_blank" alt="Download menu"> Download PDF menu</a>
+              <i class="icon-doc icons"></i>
+              <a
+                :href="item.data.pdf_menu.url"
+                target="_blank"
+                alt="Download menu"
+              >Download PDF menu</a>
             </p>
           </div>
         </div>
@@ -48,11 +52,11 @@ export default {
     };
   },
   created() {
-       if (process.browser) {
-        let sc1 = document.createElement("script");
-        sc1.setAttribute("src", "/js/scripts.js");
-        document.body.appendChild(sc1);
-      }
+    if (process.browser) {
+      let sc1 = document.createElement("script");
+      sc1.setAttribute("src", "/js/scripts.js");
+      document.body.appendChild(sc1);
+    }
   },
   async asyncData({ context, error, req }) {
     try {
