@@ -1,0 +1,256 @@
+<template>
+  <div class="main-container">
+    {{documentId}}
+    <prismic-edit-button :documentId="documentId" />
+    <pre>
+      {{document}}
+    </pre>
+    <section class="cover imagebg text-center height-80 section--ken-burns" data-overlay="5">
+      <div class="background-image-holder">
+        <img alt="background" src="img/head1.jpg" />
+      </div>
+      <div class="container pos-vertical-center">
+        <div class="row">
+          <div class="col-md-9 col-lg-8">
+            <b-img src="img/logo-light.png" fluid alt="LA MAISON"></b-img>
+            <p class="lead">Sussex, UK</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg--primary bg-maison">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-6">
+            <div class="heading-block">
+              <h2>Mobile BBQ Service in Sussex</h2>
+            </div>
+            <div class="text-block">
+              <p class="lead">
+                <b>LA MAISON – Mobile BBQ Service</b> company is located in Sussex. We are the Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties.
+              </p>
+              <p>
+                We use
+                <b>authentic charcoal</b> and woods for an unforgettable BBQ experience. Barbecuing techniques include smoking, roasting or baking, braising and grilling. We not only offer a
+                <b>personalised menu</b>, you also have the choice of bespoke menus and different styles, like traditional, smokey or Thai. Our professional team can cater for all eventualities.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="boxed boxed--lg boxed--border bg--secondary">
+              <b-img :src="document.main_image.url" class="border--round"></b-img>
+              <p>We provide the best home barbecue cooking in the South of England. LA MAISON will serve you quality hand prepared barbecue cuisine with flawless service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="imagebg space--md section--ken-burns" data-overlay="5">
+      <div class="background-image-holder">
+        <b-img :src="document.image_section_2.url" class="border--round"></b-img>
+      </div>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-6">
+            <div class="heading-block">
+              <h2>Tailored to your event</h2>
+            </div>
+            <div class="text-block">
+              <p
+                class="lead"
+              >Whether you are sourcing event catering services in the Sussex area for particular themed parties, barbecues, birthday parties or even just intimate private parties we have some inspirational ideas for any catering event.</p>
+              <p>We pride ourselves on our outstanding service and food, delivered in a fun but highly professional manner. Our goal is to ensure the complete satisfaction of every customer while offering professional and friendly catering services at affordable rates. We will exceed your expectations by creating custom menus and décor to fit your unique taste.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="boxed boxed--lg boxed--border bg--secondary">
+              <img
+                alt="image"
+                src="img/19904648_1388577864513304_1909623741_n.jpg"
+                class="border--round"
+              />
+              <h5>Save Time</h5>
+              <p>We cater all of your favourites dishes with a hip new spin on traditional cuisine. We only use fresh local ingredients. Whether you need us to cater for a breakfast, lunch, dinner or anything in between, we’ve got you covered. For your next event, choose LA MAISON – Mobile BBQ Service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feature-large switchable switchable--switch">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-6 col-md-6">
+            <img alt="Image" class="border--round box-shadow-wide" src="img/vel1.jpg" />
+          </div>
+          <div class="col-lg-5 col-md-6">
+            <div class="heading-block">
+              <h2>Options for everyone</h2>
+            </div>
+            <div class="text-block">
+              <p>Exquisite food and impeccable service can make your party even more memorable and unique. LA MAISON Mobile BBQ Catering recommends your barbecue meal to be cooked in front of the quests and served buffet style. The main reason for this is that we strongly believe it is a good fit for a bbq style menu – It allows your guests to customise what they want on their plates in terms of both quantity and selection from the barbecue wedding buffet!</p>
+              <p>
+                <a class="btn btn--sm type--uppercase" href="#">
+                  <span class="btn__text">View our menu</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg--secondary">
+      <div class="container">
+        <div class="row text-block">
+          <div class="col-md-12">
+            <h3>Our recent stories</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <article class="feature feature-1">
+              <a href="#" class="block">
+                <img alt="Image" src="img/head3.jpg" />
+              </a>
+              <div class="feature__body boxed boxed--border">
+                <span>May 25th 2016</span>
+                <h5>A day in the life of a professional fitness blogger</h5>
+                <a href="#">Read More</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature feature-1">
+              <a href="#" class="block">
+                <img alt="Image" src="img/head4.jpg" />
+              </a>
+              <div class="feature__body boxed boxed--border">
+                <span>May 25th 2016</span>
+                <h5>Small businesses that expertly leverage their online followings</h5>
+                <a href="#">Read More</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature feature-1">
+              <a href="#" class="block">
+                <img alt="Image" src="img/head1.jpg" />
+              </a>
+              <div class="feature__body boxed boxed--border">
+                <span>May 25th 2016</span>
+                <h5>Designing efficiently in the age of distraction</h5>
+                <a href="#">Read More</a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                          <p>
+                <a class="btn btn--sm type--uppercase" href="#">
+                  <span class="btn__text">View our menu</span>
+                </a>
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-center bg--primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10">
+            <div class="slider" data-paging="true">
+              <ul class="slides">
+                <li v-for="(item, index) in document.quote" :key="index">
+                  <div class="testimonial">
+                    <blockquote v-if="item.title[0]">“{{item.title[0].text}}”</blockquote>
+                    <div v-if="item.comment[0]">{{item.comment[0].text}}</div>
+                    <h5 v-if="item.name">{{item.name}}</h5>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg--dark space--sm">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="slider" data-arrows="true" data-paging="true" data-timing="5000">
+              <ul class="slides">
+                <li
+                  class="col-md-6 col-12"
+                  v-for="(item, index) in document.slideshow_images"
+                  :key="index"
+                >
+                  <div
+                    class="project-thumb hover-element border--round hover--active"
+                    v-if="item.image.url"
+                  >
+                    <a href="#">
+                      <div class="hover-element__initial">
+                        <div class="background-image-holder">
+                          <b-img :src="item.image.url" fluid :alt="item.title"></b-img>
+                        </div>
+                      </div>
+                      <div class="hover-element__reveal" data-scrim-top="5">
+                        <div class="project-thumb__title">
+                          <h4 v-if="item.title">{{item.title}}</h4>
+                          <span v-if="item.subtitle">{{item.subtitle}}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+import Logo from "~/components/Logo.vue";
+import Prismic from "prismic-javascript";
+import PrismicConfig from "~/prismic.config.js";
+
+export default {
+  components: {
+    Logo
+  },
+  data: function() {
+    return {
+      document: null,
+      documentId: null
+    };
+  },
+  async asyncData({ context, error, req }) {
+    try {
+      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
+
+      let document = {};
+      const result = await api.getSingle("homepage");
+      document = result.data;
+
+      // Load the edit button
+      if (process.client) window.prismic.setupEditButton();
+
+      return {
+        document,
+        documentId: result.id
+      };
+    } catch (e) {
+      error({ statusCode: 404, message: "Page not found" });
+    }
+  }
+};
+</script>
+
+<style scoped>
+.bg-maison {
+  background: url("/img/bg.png") #bb4a28;
+}
+</style>
