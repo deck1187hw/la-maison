@@ -44,14 +44,14 @@
               </a>
             </li>
           </ul>
-          <a href="#" class="btn type--uppercase">
+           <nuxt-link to="/contact">
             <span class="btn__text">Contact Us</span>
-          </a>
+                </nuxt-link>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <img alt="LA MAISON - Mobile BBQ Service in Sussex" class="logo" src="img/logo-light.png" />
+          <img alt="LA MAISON - Mobile BBQ Service in Sussex" class="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
           <span class="type--fine-print">
             ©
             <span class="update-year"></span> LA MAISON - Mobile BBQ Service in Sussex

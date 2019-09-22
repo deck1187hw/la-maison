@@ -1,6 +1,5 @@
 <template>
   <div class="main-container">
-
     <section class="cover imagebg text-center height-80 section--ken-burns" data-overlay="5">
       <div class="background-image-holder">
         <b-img :src="document.heading_image.url"></b-img>
@@ -8,7 +7,11 @@
       <div class="container pos-vertical-center">
         <div class="row">
           <div class="col-md-9 col-lg-8">
-            <b-img src="img/logo-light.png" fluid alt="LA MAISON"></b-img>
+            <b-img
+              src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png"
+              fluid
+              alt="LA MAISON"
+            ></b-img>
             <p class="lead">Sussex, UK</p>
           </div>
         </div>
@@ -61,7 +64,11 @@
           </div>
           <div class="col-md-6">
             <div class="boxed boxed--lg boxed--border bg--secondary">
-               <b-img v-if="document.tailored_event_small_image.url" :src="document.tailored_event_small_image.url" class="border--round"></b-img>
+              <b-img
+                v-if="document.tailored_event_small_image.url"
+                :src="document.tailored_event_small_image.url"
+                class="border--round"
+              ></b-img>
             </div>
           </div>
         </div>
@@ -80,7 +87,6 @@
               </div>
               <div class="text-block">
                 <p>Exquisite food and impeccable service can make your party even more memorable and unique. LA MAISON Mobile BBQ Catering recommends your barbecue meal to be cooked in front of the quests and served buffet style. The main reason for this is that we strongly believe it is a good fit for a bbq style menu – It allows your guests to customise what they want on their plates in terms of both quantity and selection from the barbecue wedding buffet!</p>
-
               </div>
             </div>
           </div>
@@ -111,39 +117,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4" v-for="(item, index) in blogs.results" :key="index">
             <article class="feature feature-1">
-              <a href="#" class="block">
-                <img alt="Image" src="img/head3.jpg" />
-              </a>
+              <nuxt-link :to="`/blog/${item.uid}`" class="block">
+                <b-img :src="item.data.main_image.url" fluid :alt="item.data.title[0].text"></b-img>
+              </nuxt-link>
               <div class="feature__body boxed boxed--border">
-                <span>May 25th 2016</span>
-                <h5>A day in the life of a professional fitness blogger</h5>
-                <a href="#">Read More</a>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="feature feature-1">
-              <a href="#" class="block">
-                <img alt="Image" src="img/head4.jpg" />
-              </a>
-              <div class="feature__body boxed boxed--border">
-                <span>May 25th 2016</span>
-                <h5>Small businesses that expertly leverage their online followings</h5>
-                <a href="#">Read More</a>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="feature feature-1">
-              <a href="#" class="block">
-                <img alt="Image" src="img/head1.jpg" />
-              </a>
-              <div class="feature__body boxed boxed--border">
-                <span>May 25th 2016</span>
-                <h5>Designing efficiently in the age of distraction</h5>
-                <a href="#">Read More</a>
+                <h5>{{item.data.title[0].text}}</h5>
+                <nuxt-link :to="`/blog/${item.uid}`">Read more</nuxt-link>
               </div>
             </article>
           </div>
@@ -151,11 +132,9 @@
         <div class="row text-center">
           <div class="col">
             <p>
-              <a class="btn btn--lg btn--secondary type--uppercase" href="#">
-                <span class="btn__text">
-                   View our blog
-                </span>
-              </a>
+              <nuxt-link :to="`/blog/`" class="btn btn--lg btn--secondary type--uppercase">
+                <span class="btn__text">View our blog</span>
+              </nuxt-link>
             </p>
           </div>
         </div>
@@ -214,15 +193,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>          
+      
     </section>
-    <div class="container">
-      <div class="row text-center">
-        <div class="col">
-          <prismic-edit-button :documentId="documentId" />
-        </div>
-      </div>
-    </div>
+   <div class="edit1 hidden-xs "><prismic-edit-button :documentId="documentId" /></div>
   </div>
 </template>
 
@@ -239,7 +213,8 @@ export default {
     return {
       document: null,
       documentId: null,
-      menus: null
+      menus: null,
+      blogs: null
     };
   },
   created() {
@@ -263,11 +238,18 @@ export default {
       );
       menus = resultmenus;
 
+      let blogs = {};
+      const resultblogs = await api.query(
+        Prismic.Predicates.at("document.type", "blog")
+      );
+      blogs = resultblogs;
+
       // Load the edit button
       if (process.client) window.prismic.setupEditButton();
 
       return {
         document,
+        blogs,
         menus: menus,
         documentId: result.id
       };
@@ -284,5 +266,13 @@ export default {
 }
 .bg-maison__white {
   background: url("/img/bg2.png") white;
+}
+.edit1{
+  position:absolute;
+  top:0px;
+  padding:10px;
+}
+.edit1 img{
+  width:10px
 }
 </style>

@@ -20,6 +20,7 @@
     "moment": "^2.24.0",
     "nuxt": "^2.0.0",
     "nuxt-simple-line-icons": "^1.0.2",
+    "nuxt-social-meta": "0.0.1",
     "prismic-javascript": "^2.1.1",
     "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt",
     "simple-line-icons": "^2.4.1",

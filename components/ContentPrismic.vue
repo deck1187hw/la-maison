@@ -23,6 +23,6 @@ export default {
     margin-top: 10px
 }
 .main-paragraph{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 </style>

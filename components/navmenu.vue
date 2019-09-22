@@ -24,8 +24,8 @@
             <div class="col-lg-2 text-center text-left-sm hidden-xs order-lg-2">
               <div class="bar__module">
                 <a href="index.html">
-                  <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
-                  <img class="logo logo-light" alt="logo" src="img/logo-light.png" />
+                  <img class="logo logo-dark" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/ffdb5088ccda770803b31eb87dc1e469263df108_logo-dark.png" />
+                  <img class="logo logo-light" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
                 </a>
               </div>
             </div>

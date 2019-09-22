@@ -61,13 +61,20 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'nuxt-simple-line-icons',
     '@nuxtjs/pwa',
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    ['nuxt-social-meta', {
+      url: 'lamaisonmobilecatering.com',
+      title: 'La Maison - Mobile BBQ Service in Sussex',
+      description: 'Description site',
+      img: 'img/head4.jpg',
+      locale: 'en_GB',
+      twitter: '@bbqmaison',
+      themeColor: '#bb4a28'
+    }]
   ],
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`
