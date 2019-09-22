@@ -1,4 +1,6 @@
 const PrismicConfig = require('./prismic.config')
+import Prismic from "prismic-javascript";
+
 
 export default {
   mode: 'universal',
