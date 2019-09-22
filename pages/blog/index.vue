@@ -1,29 +1,70 @@
 <template>
-<div class="main-container">
-            <section class="text-center height-50">
-                <div class="container pos-vertical-center">
-                    <div class="row">
-                        <div class="col-md-8 col-lg-6">
-                            <h1>Under construction</h1>
-                            <p class="lead">
-                                   -
-                            </p>
-                        </div>
+  <div class="main-container">
+    <section class="space--sm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="masonr2y">
+              <div class="row">
+                <div
+                  class="col-lg-4 col-md-6"
+                  v-for="(item, index) in document.results"
+                  :key="index"
+                >
+                  <article class="feature feature-1">
+                    <nuxt-link :to="`/blog/${item.uid}`" class="block">
+                      <b-img :src="item.data.main_image.url" fluid :alt="item.data.title[0].text"></b-img>
+                    </nuxt-link>
+                    <div class="feature__body boxed boxed--border">
+                      <h5>{{item.data.title[0].text}}</h5>
+                      <nuxt-link :to="`/blog/${item.uid}`">Read more</nuxt-link>
                     </div>
-                    <!--end of row-->
+                  </article>
                 </div>
-                <!--end of container-->
-            </section>
-</div>
+              </div>
+            </div>
+            <!--end masonry-->
+          </div>
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+  </div>
 </template>
 
 <script>
-
+import Prismic from "prismic-javascript";
+import PrismicConfig from "~/prismic.config.js";
 export default {
-  components: {
+  components: {},
+  data: function() {
+    return {
+      document: null
+    };
+  },
+  created() {},
+  async asyncData({ context, error, req }) {
+    try {
+      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
+      let document = {};
+      const result = await api.query(
+        Prismic.Predicates.at("document.type", "blog")
+      );
+      document = result;
+
+      // Load the edit button
+      if (process.client) window.prismic.setupEditButton();
+
+      return {
+        document
+      };
+    } catch (e) {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   }
-}
+};
 </script>
 
 <style>

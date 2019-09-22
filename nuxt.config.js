@@ -48,6 +48,7 @@ export default {
     '~/plugins/link-resolver.js',
     '~/plugins/html-serializer.js',
     '~/plugins/prismic-vue.js',
+    '~/plugins/vue-moment.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -55,6 +56,7 @@ export default {
   buildModules: [
 
   ],
+
   /*
   ** Nuxt.js modules
   */
@@ -64,7 +66,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'nuxt-simple-line-icons',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/moment'
   ],
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`

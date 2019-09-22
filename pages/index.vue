@@ -1,9 +1,9 @@
 <template>
   <div class="main-container">
-   
+
     <section class="cover imagebg text-center height-80 section--ken-burns" data-overlay="5">
       <div class="background-image-holder">
-        <img alt="background" src="img/head1.jpg" />
+        <b-img :src="document.heading_image.url"></b-img>
       </div>
       <div class="container pos-vertical-center">
         <div class="row">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </section>
-    <section class="bg--primary bg-maison">
+    <section class="bg--primary bg-maison space--sm">
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-md-6">
@@ -41,7 +41,7 @@
         </div>
       </div>
     </section>
-    <section class="imagebg space--md section--ken-burns" data-overlay="5">
+    <section class="imagebg space--md section--ken-burns space--sm" data-overlay="5">
       <div class="background-image-holder">
         <b-img :src="document.image_section_2.url" class="border--round"></b-img>
       </div>
@@ -56,45 +56,54 @@
                 class="lead"
               >Whether you are sourcing event catering services in the Sussex area for particular themed parties, barbecues, birthday parties or even just intimate private parties we have some inspirational ideas for any catering event.</p>
               <p>We pride ourselves on our outstanding service and food, delivered in a fun but highly professional manner. Our goal is to ensure the complete satisfaction of every customer while offering professional and friendly catering services at affordable rates. We will exceed your expectations by creating custom menus and décor to fit your unique taste.</p>
+              <p>We cater all of your favourites dishes with a hip new spin on traditional cuisine. We only use fresh local ingredients. Whether you need us to cater for a breakfast, lunch, dinner or anything in between, we’ve got you covered. For your next event, choose LA MAISON – Mobile BBQ Service</p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="boxed boxed--lg boxed--border bg--secondary">
-              <img
-                alt="image"
-                src="img/19904648_1388577864513304_1909623741_n.jpg"
-                class="border--round"
-              />
-              <h5>Save Time</h5>
-              <p>We cater all of your favourites dishes with a hip new spin on traditional cuisine. We only use fresh local ingredients. Whether you need us to cater for a breakfast, lunch, dinner or anything in between, we’ve got you covered. For your next event, choose LA MAISON – Mobile BBQ Service</p>
+               <b-img v-if="document.tailored_event_small_image.url" :src="document.tailored_event_small_image.url" class="border--round"></b-img>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="feature-large switchable switchable--switch">
+    <section class="feature-large switchable switchable--switch bg-maison__white space--sm">
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-lg-6 col-md-6">
-            <img alt="Image" class="border--round box-shadow-wide" src="img/vel1.jpg" />
+            <b-img :src="document.options_for_everyone_image.url" alt="Options for everyone"></b-img>
           </div>
           <div class="col-lg-5 col-md-6">
-            <div class="heading-block">
-              <h2>Options for everyone</h2>
-            </div>
-            <div class="text-block">
-              <p>Exquisite food and impeccable service can make your party even more memorable and unique. LA MAISON Mobile BBQ Catering recommends your barbecue meal to be cooked in front of the quests and served buffet style. The main reason for this is that we strongly believe it is a good fit for a bbq style menu – It allows your guests to customise what they want on their plates in terms of both quantity and selection from the barbecue wedding buffet!</p>
-              <p>
-               <a class="btn btn--lg btn--primary type--uppercase" href="#">
-                  <span class="btn__text"><i class="icon-cup icons"></i> View our menu</span>
-                </a>
-              </p>
+            <div class="boxed boxed--lg boxed--border bg--secondary">
+              <div class="heading-block">
+                <h2>Options for everyone</h2>
+              </div>
+              <div class="text-block">
+                <p>Exquisite food and impeccable service can make your party even more memorable and unique. LA MAISON Mobile BBQ Catering recommends your barbecue meal to be cooked in front of the quests and served buffet style. The main reason for this is that we strongly believe it is a good fit for a bbq style menu – It allows your guests to customise what they want on their plates in terms of both quantity and selection from the barbecue wedding buffet!</p>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="bg--secondary">
+    <section class="bg--dark space--sm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-6" v-for="(item, index) in menus.results" :key="index">
+            <nuxt-link class="block" :to="`/menus/${item.uid}`">
+              <div class="feature feature-7 boxed text-center imagebg" data-overlay="3">
+                <div class="background-image-holder">
+                  <b-img :src="item.data.main_photo.url" fluid :alt="item.data.title[0].text"></b-img>
+                </div>
+                <h4 class="pos-vertical-center">{{item.data.title[0].text}}</h4>
+              </div>
+            </nuxt-link>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg--secondary space--sm">
       <div class="container">
         <div class="row text-block">
           <div class="col-md-12">
@@ -141,20 +150,22 @@
         </div>
         <div class="row text-center">
           <div class="col">
-              <p>
-                <a class="btn btn--lg btn--primary type--uppercase" href="#">
-                  <span class="btn__text"><i class="icon-docs icons"></i> View our blog</span>
-                </a>
-              </p>
+            <p>
+              <a class="btn btn--lg btn--secondary type--uppercase" href="#">
+                <span class="btn__text">
+                   View our blog
+                </span>
+              </a>
+            </p>
           </div>
         </div>
       </div>
     </section>
-    <section class="text-center bg--primary">
+    <section class="text-center bg--primary space--sm">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10">
-            <div class="slider" data-paging="true">
+            <div class="slider" data-paging="true" data-arrows="true">
               <ul class="slides">
                 <li v-for="(item, index) in document.quote" :key="index">
                   <div class="testimonial">
@@ -173,7 +184,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <div class="slider" data-arrows="true" data-paging="true" data-timing="5000">
+            <div class="slider" data-arrows="true" data-paging="true" data-timing="7000">
               <ul class="slides">
                 <li
                   class="col-md-6 col-12"
@@ -205,7 +216,13 @@
         </div>
       </div>
     </section>
-        <prismic-edit-button :documentId="documentId" />
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <prismic-edit-button :documentId="documentId" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -221,15 +238,16 @@ export default {
   data: function() {
     return {
       document: null,
-      documentId: null
+      documentId: null,
+      menus: null
     };
   },
   created() {
-       if (process.browser) {
-        let sc1 = document.createElement("script");
-        sc1.setAttribute("src", "/js/scripts.js");
-        document.body.appendChild(sc1);
-      }
+    if (process.browser) {
+      let sc1 = document.createElement("script");
+      sc1.setAttribute("src", "/js/scripts.js");
+      document.body.appendChild(sc1);
+    }
   },
   async asyncData({ context, error, req }) {
     try {
@@ -239,11 +257,18 @@ export default {
       const result = await api.getSingle("homepage");
       document = result.data;
 
+      let menus = {};
+      const resultmenus = await api.query(
+        Prismic.Predicates.at("document.type", "menus")
+      );
+      menus = resultmenus;
+
       // Load the edit button
       if (process.client) window.prismic.setupEditButton();
 
       return {
         document,
+        menus: menus,
         documentId: result.id
       };
     } catch (e) {
@@ -256,5 +281,8 @@ export default {
 <style scoped>
 .bg-maison {
   background: url("/img/bg.png") #bb4a28;
+}
+.bg-maison__white {
+  background: url("/img/bg2.png") white;
 }
 </style>

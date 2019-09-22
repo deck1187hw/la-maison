@@ -1,7 +1,7 @@
 {
   "name": "lamaison",
   "version": "1.0.0",
-  "description": "My astonishing Nuxt.js project",
+  "description": "Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties",
   "author": "Miguel Puig",
   "private": true,
   "scripts": {
@@ -17,15 +17,18 @@
     "bootstrap": "^4.1.3",
     "bootstrap-vue": "^2.0.0-rc.11",
     "jquery": "^3.4.1",
+    "moment": "^2.24.0",
     "nuxt": "^2.0.0",
     "nuxt-simple-line-icons": "^1.0.2",
     "prismic-javascript": "^2.1.1",
     "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt",
-    "simple-line-icons": "^2.4.1"
+    "simple-line-icons": "^2.4.1",
+    "vue-moment": "^4.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/moment": "^1.3.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2"

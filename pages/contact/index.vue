@@ -1,66 +1,86 @@
 <template>
-<div class="main-container">
-            <section class="text-center height-50">
-                <div class="container pos-vertical-center">
-                    <div class="row">
-                        <div class="col-md-8 col-lg-6">
-                            <h1>Let's talk about your event</h1>
-                            <p class="lead">
-                                    We will customise it to meet your requirements.
-                            </p>
-                        </div>
-                    </div>
-                    <!--end of row-->
+  <div class="main-container">
+    <section class="switchable">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-5">
+            <b-img :src="document.image.url" fluid :alt="document.text_contact.text"></b-img>
+          </div>
+          <div class="col-md-6">
+            <contentPrismic v-bind:items="document.text_contact" />
+            <div class="row mx-0 switchable__text flex-column">
+              <p class="lead">
+                E:
+                <a :href="`mailto:${document.email}`">{{document.email}}</a>
+                <br />
+                P: {{document.phone}}
+              </p>
+
+              <hr class="short" />
+              <form
+                class="form-email row"
+                data-success="Thanks for your enquiry, we'll be in touch shortly."
+                data-error="Please fill in all fields correctly."
+              >
+                <div class="col-md-6">
+                  <label>Your Name:</label>
+                  <input type="text" name="name" class="validate-required" />
                 </div>
-                <!--end of container-->
-            </section>
-            <section class=" bg--secondary">
-                <div class="container">
-                    <div class="row justify-content-center no-gutters">
-                        <div class="col-md-10 col-lg-8">
-                            <div class="boxed boxed--border">
-                                <form class="text-left form-email row mx-0" data-success="Thanks for your enquiry, we'll be in touch shortly." data-error="Please fill in all fields correctly." data-recaptcha-sitekey="6LewhCIUAAAAACSwFvBDhgtTbw6EnW6e9dip8o2u" data-recaptcha-theme="light">
-                                    <div class="col-md-6">
-                                        <span>Name:</span>
-                                        <input type="text" name="name" class="validate-required" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span>Company:</span>
-                                        <input type="text" name="company" class="validate-required" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span>Email Address:</span>
-                                        <input type="email" name="email" class="validate-required validate-email" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span>Phone:</span>
-                                        <input type="tel" name="phone" class="validate-required" />
-                                    </div>
-                                    <div class="col-md-12">
-                                        <span>About Project:</span>
-                                        <textarea rows="5" name="description" class="validate-required"></textarea>
-                                    </div>
-                                  
-                                    <div class="col-md-12 boxed">
-                                        <button type="submit" class="btn btn--primary type--uppercase">Submit</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end of row-->
+                <div class="col-md-6">
+                  <label>Email Address:</label>
+                  <input type="email" name="email" class="validate-required validate-email" />
                 </div>
-                <!--end of container-->
-            </section>
-</div>
+                <div class="col-md-12">
+                  <label>Message:</label>
+                  <textarea rows="4" name="Message" class="validate-required"></textarea>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                  <button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
+                </div>
+              </form>
+              <hr class="short" />
+              <contentPrismic v-bind:items="document.text_contact_below" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
+import Prismic from "prismic-javascript";
+import PrismicConfig from "~/prismic.config.js";
+import contentPrismic from "~/components/Contentprismic.vue";
 export default {
   components: {
+    contentPrismic
+  },
+  data: function() {
+    return {
+      document: null
+    };
+  },
+  created() {},
+  async asyncData({ context, error, req }) {
+    try {
+      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
+      let document = {};
+      const result = await api.getSingle("contact");
+      document = result.data;
+
+      // Load the edit button
+      if (process.client) window.prismic.setupEditButton();
+
+      return {
+        document
+      };
+    } catch (e) {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   }
-}
+};
 </script>
 
 <style>
