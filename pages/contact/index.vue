@@ -7,7 +7,7 @@
             <b-img :src="document.image.url" fluid :alt="document.text_contact.text"></b-img>
           </div>
           <div class="col-md-6">
-            <contentprismic v-bind:items="document.text_contact" />
+            <Contentprismic v-bind:items="document.text_contact" />
             <div class="row mx-0 switchable__text flex-column">
               <p class="lead">
                 E:
@@ -39,7 +39,7 @@
                 </div>
               </form>
               <hr class="short" />
-              <contentprismic v-bind:items="document.text_contact_below" />
+              <Contentprismic v-bind:items="document.text_contact_below" />
             </div>
           </div>
         </div>
@@ -51,10 +51,10 @@
 <script>
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
-import contentprismic from "~/components/contentprismic.vue";
+import Contentprismic from "~/components/Contentprismic.vue";
 export default {
   components: {
-    contentprismic
+    Contentprismic
   },
   data: function() {
     return {

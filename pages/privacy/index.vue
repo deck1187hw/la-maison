@@ -5,7 +5,7 @@
         <div class="row justify-content-between">
           <div class="col-md-12">
             <h2>Privacy Policy</h2>
-            <contentprismic v-bind:items="document.privacy_policy" />
+            <Contentprismic v-bind:items="document.privacy_policy" />
           </div>
         </div>
       </div>
@@ -15,11 +15,11 @@
 <script>
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
-import contentprismic from "~/components/contentprismic.vue";
+import Contentprismic from "~/components/Contentprismic.vue";
 
 export default {
   components: {
-    contentprismic
+    Contentprismic
   },
   data: function() {
     return {
