@@ -15,7 +15,7 @@
 <script>
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
-import Contentprismic from "../components/Contentprismic.vue";
+import Contentprismic from "~/components/Contentprismic.vue";
 
 export default {
   components: {
