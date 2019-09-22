@@ -44,14 +44,16 @@
               </a>
             </li>
           </ul>
-           <nuxt-link to="/contact" class="btn type--uppercase">
-            <span class="btn__text">Contact Us</span>
-                </nuxt-link>
+
+<a href="https://www.poptop.uk.com/supplier/la-maison-mobile-bbq/">
+          <b-img alt="LA MAISON - Mobile BBQ Service in Sussex" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2F57697e84-aca3-4d51-b8b7-9338d8617871_logoa.png"></b-img>
+</a>
+                
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <img alt="LA MAISON - Mobile BBQ Service in Sussex" class="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
+
           <span class="type--fine-print">
             ©
             <span class="update-year"></span> LA MAISON - Mobile BBQ Service in Sussex

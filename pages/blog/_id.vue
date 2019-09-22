@@ -26,9 +26,9 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-8">
-                <Contentprismic v-bind:items="document.subtitle" />
+                <contentprismic v-bind:items="document.subtitle" />
                 <div class="article__body">
-                  <Contentprismic v-bind:items="document.main_text" />
+                  <contentprismic v-bind:items="document.main_text" />
                 </div>
                 <div class="article__share text-center">
                   <a class="btn bg--facebook btn--icon" href="#">
@@ -57,10 +57,10 @@
 import moment from "moment";
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
-import Contentprismic from "~/components/Contentprismic.vue";
+import contentprismic from "~/components/contentprismic.vue";
 export default {
   components: {
-    Contentprismic
+    contentprismic
   },
   head() {
     let description = "";
