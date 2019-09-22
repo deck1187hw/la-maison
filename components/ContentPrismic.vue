@@ -6,8 +6,7 @@
       <p v-else-if="item.type=='image'" class="imig-cont">
         <b-img :src="item.url" fluid :alt="item.alt"></b-img>
       </p>
-       <h1 class="lead" v-if="item.type=='heading1'">{{item.text}}</h1>
-
+      <h1 class="lead" v-if="item.type=='heading1'">{{item.text}}</h1>
     </div>
   </div>
 </template>
@@ -18,11 +17,11 @@ export default {
 };
 </script>
 <style scoped>
-.imig-cont{
-    margin-bottom: 10px;
-    margin-top: 10px
+.imig-cont {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
-.main-paragraph{
-    margin-bottom: 15px;
+.main-paragraph {
+  margin-bottom: 15px;
 }
 </style>

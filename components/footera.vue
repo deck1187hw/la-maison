@@ -44,7 +44,7 @@
               </a>
             </li>
           </ul>
-           <nuxt-link to="/contact">
+           <nuxt-link to="/contact" class="btn type--uppercase">
             <span class="btn__text">Contact Us</span>
                 </nuxt-link>
         </div>
@@ -56,8 +56,9 @@
             ©
             <span class="update-year"></span> LA MAISON - Mobile BBQ Service in Sussex
           </span>
-          <a class="type--fine-print" href="#">Privacy Policy</a>
-          <a class="type--fine-print" href="#">Legal</a>
+          <nuxt-link to="/menus" class="type--fine-print">
+          Privacy Policy</nuxt-link>
+          
         </div>
       </div>
     </div>
