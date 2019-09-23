@@ -1,5 +1,8 @@
 <template>
   <div class="main-container">
+     <div class="edit1 hidden-xs">
+      <prismic-edit-button :documentId="documentId" />
+    </div>
     <section class="switchable">
       <div class="container">
         <div class="row justify-content-between">
@@ -60,7 +63,8 @@ export default {
   },
   data: function() {
     return {
-      document: null
+      document: null,
+      documentId: null
     };
   },
   created() {},
@@ -76,7 +80,8 @@ export default {
       if (process.client) window.prismic.setupEditButton();
 
       return {
-        document
+        document,
+        documentId: result.id
       };
     } catch (e) {
       error({ statusCode: 404, message: "Page not found" });

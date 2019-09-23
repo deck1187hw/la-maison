@@ -1,8 +1,11 @@
 <template>
   <div class="main-container">
+     <div class="edit1 hidden-xs">
+      <prismic-edit-button :documentId="documentId" />
+    </div>
     <section class="unpad">
       <article>
-        <div class="imagebg text-center height-30" data-overlay="8">
+        <div class="imagebg text-center height-50" data-overlay="8">
           <div class="background-image-holder">
             <b-img :src="document.main_image.url" :alt="document.title[0].text"></b-img>
           </div>
@@ -28,22 +31,8 @@
               <div class="col-md-10 col-lg-8">
                 <Contentprismic v-bind:items="document.subtitle" />
                 <div class="article__body">
-                  <Contentprismic v-bind:items="document.main_text" />
-                </div>
-                <div class="article__share text-center">
-                  <a class="btn bg--facebook btn--icon" href="#">
-                    <span class="btn__text">
-                      <i class="socicon socicon-facebook"></i>
-                      Share on Facebook
-                    </span>
-                  </a>
-                  <a class="btn bg--twitter btn--icon" href="#">
-                    <span class="btn__text">
-                      <i class="socicon socicon-twitter"></i>
-                      Share on Twitter
-                    </span>
-                  </a>
-                </div>
+                  <div v-html="Dom.RichText.asHtml(document.main_text)"></div>
+                </div>                
               </div>
             </div>
           </div>
@@ -58,6 +47,7 @@ import moment from "moment";
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import Contentprismic from "~/components/Contentprismic.vue";
+import PrismicDOM from "prismic-dom";
 export default {
   components: {
     Contentprismic
@@ -77,7 +67,9 @@ export default {
   },
   data: function() {
     return {
-      document: null
+      document: null,
+      documentId: null,
+      Dom: PrismicDOM
     };
   },
   created() {
@@ -101,7 +93,8 @@ export default {
       if (process.client) window.prismic.setupEditButton();
 
       return {
-        document
+        document,
+        documentId: result.id
       };
     } catch (e) {
       error({ statusCode: 404, message: "Page not found" });

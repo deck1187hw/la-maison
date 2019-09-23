@@ -6,8 +6,8 @@
           <div class="row">
             <div class="col-3 col-md-2">
               <a href="index.html">
-                <img class="logo logo-dark" alt="logo" src="img/logo-dark.png" />
-                <img class="logo logo-light" alt="logo" src="img/logo-light.png" />
+                <img class="logo logo-dark" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/ffdb5088ccda770803b31eb87dc1e469263df108_logo-dark.png" />
+                <img class="logo logo-light" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
               </a>
             </div>
             <div class="col-9 col-md-10 text-right">

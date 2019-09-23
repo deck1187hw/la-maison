@@ -6,13 +6,16 @@
     <section>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col-md-6">
-            <div v-html="Dom.RichText.asHtml(document.title)"></div>
-            <div v-html="Dom.RichText.asHtml(document.top_description)"></div>
+          <div class="col-md-7">
+              <div class="boxed boxed--border bg--secondary boxed--lg box-shadow bg-maison__white">
+            <div class="title" v-html="Dom.RichText.asHtml(document.title)"></div>
+            <div class="lead" v-html="Dom.RichText.asHtml(document.top_description)"></div>
             <div v-html="Dom.RichText.asHtml(document.menu_content)"></div>
+            <hr />
             <div v-html="Dom.RichText.asHtml(document.bottom_description)"></div>
+              </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-5">
             <div class="boxed boxed--border bg--secondary boxed--lg box-shadow">
               <b-img :src="document.main_photo.url" fluid class="border--round" alt="Team"></b-img>
               <p v-if="document.pdf_menu.url">
@@ -39,7 +42,18 @@ export default {
   components: {
     Contentprismic
   },
-  head() {},
+  head() {
+    let description = "";
+    if (this.document.top_description.length > 0) {
+      description = this.document.top_description[0].text;
+    }
+    return {
+      title: this.document.title[0].text,
+      meta: [
+        { hid: "description", name: "description", content: description }
+      ]
+    };
+  },
   data: function() {
     return {
       Dom: PrismicDOM,
