@@ -1,5 +1,8 @@
 <template>
   <footer class="space--sm footer-1 text-center-xs bg--dark">
+    <client-only>
+    <cookie-law theme="dark-lime"></cookie-law>
+    </client-only>
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
@@ -66,6 +69,19 @@
     </div>
   </footer>
 </template>
+<script>
+import CookieLaw from 'vue-cookie-law'
+
+export default {
+  components: {CookieLaw},
+  data: function() {
+    return {
+    };
+  },
+  computed: {
+  }
+};
+</script>
 <style scoped>
 footer .logo {
   max-height: 4.671429em;

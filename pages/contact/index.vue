@@ -22,9 +22,7 @@
 
               <hr class="short" />
               <form
-                class="form-email row"
-                data-success="Thanks for your enquiry, we'll be in touch shortly."
-                data-error="Please fill in all fields correctly."
+              name="contact" netlify class="form-email row"          
               >
                 <div class="col-md-6">
                   <label>Your Name:</label>

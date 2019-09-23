@@ -15,6 +15,10 @@
             <p class="lead">Sussex, UK</p>
           </div>
         </div>
+        
+      </div>
+      <div class="info-top-ab hidden-xs">
+        <b-img alt="Food Hygiene Rating 5 - La Maison BBQ" src="https://maisonbbq.cdn.prismic.io/maisonbbq/9f1fd00f2d122d7047be9022d2763f69204282f9_food-300x198.jpg" fluid ></b-img>
       </div>
     </section>
     <section class="bg--primary bg-maison space--sm">
@@ -266,5 +270,11 @@ export default {
 }
 .bg-maison__white {
   background: url("/img/bg2.png") white;
+}
+.info-top-ab{
+  position: absolute;
+  bottom:20px;
+  right:20px;
+  width: 140px;
 }
 </style>

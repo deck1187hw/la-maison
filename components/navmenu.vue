@@ -5,10 +5,10 @@
         <div class="container">
           <div class="row">
             <div class="col-3 col-md-2">
-              <a href="index.html">
+              <nuxt-link :to="`/`">
                 <img class="logo logo-dark" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/ffdb5088ccda770803b31eb87dc1e469263df108_logo-dark.png" />
                 <img class="logo logo-light" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
-              </a>
+              </nuxt-link>
             </div>
             <div class="col-9 col-md-10 text-right">
               <a href="#" class="hamburger-toggle" data-toggle-class="#menu2;hidden-xs hidden-sm">
@@ -23,10 +23,10 @@
           <div class="row">
             <div class="col-lg-2 text-center text-left-sm hidden-xs order-lg-2">
               <div class="bar__module">
-                <a href="index.html">
+                <nuxt-link :to="`/`">
                   <img class="logo logo-dark" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/ffdb5088ccda770803b31eb87dc1e469263df108_logo-dark.png" />
                   <img class="logo logo-light" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
-                </a>
+                 </nuxt-link>
               </div>
             </div>
             <div class="col-lg-5 order-lg-1">
@@ -69,8 +69,10 @@
               <div class="bar__module">
                   <nuxt-link class="btn btn--sm type--uppercase btn--primary" :to="`/contact/`">
                     <span class="btn__text">Contact us</span>
-                  </nuxt-link>
-                </a>
+                  </nuxt-link>               
+              </div>
+              <div class="bar__module">
+                 <span class="badge badge-pill badge-secondary">Secondary</span>            
               </div>
             </div>
           </div>
