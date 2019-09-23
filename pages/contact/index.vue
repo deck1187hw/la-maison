@@ -21,7 +21,7 @@
                 </p>
 
                 <hr class="short" />
-                <form name="contact" netlify class="form-email row">
+                <form name="contact" class="form-email row"  method="POST" data-netlify="true">
                   <div class="col-md-6">
                     <label>Your Name:</label>
                     <input
