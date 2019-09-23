@@ -25,7 +25,7 @@
                   <div class="col-md-6">
                     <label>Your Name:</label>
                     <input
-                    v-model="form.name"
+
                       type="text"
                       name="name"
                       placeholder="Your full name"
@@ -35,7 +35,7 @@
                   <div class="col-md-6">
                     <label>Phone:</label>
                     <input
-                    v-model="form.phone"
+         
                       type="text"
                       placeholder="Your phone"
                       name="phone"
@@ -45,7 +45,7 @@
                   <div class="col-md-12">
                     <label>Email Address:</label>
                     <input
-                    v-model="form.email"
+
                       type="email"
                       name="email"
                       placeholder="Your email address"
@@ -56,7 +56,7 @@
                   <div class="col-md-12">
                     <label>I am interested in:</label>
   
-                    <select class="browser-default custom-select" name="Interested_In" v-model="form.interested">
+                    <select class="browser-default custom-select" name="Interested_In">
                       <option selected :value="0">-- Please select --</option>
                       <option
                         :value="item.data.title[0].text"
@@ -70,7 +70,7 @@
                     <label>Your query :</label>
                     <textarea
                       rows="4"
-                      v-model="form.message"
+
                       name="Message"
                       class="validate-required"
                       placeholder="Ask us anything..."
@@ -79,7 +79,7 @@
                   </div>
 
                   <div class="col-md-5 col-lg-4">
-                    <button :disabled="!validForm" type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
+                    <button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
                   </div>
                 </form>
                 <hr class="short" />
