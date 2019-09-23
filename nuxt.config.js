@@ -98,5 +98,36 @@ export default {
     extend (config, ctx) {
       config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
+  },
+  generate: {
+    // https://nebulab.it/blog/create-fast-nuxtjs-website-prismic/
+
+
+    routes: async function () {
+        const api = await Prismic.getApi(PrismicConfig.apiEndpoint);
+  
+        const blogPosts = api.query(Prismic.Predicates.at('document.type', 'blog'))
+          .then(response => {
+              return response.results.map(payload => {
+              return {
+                  route: `/blog/${payload.uid}`,
+                  payload
+              }
+              })          
+          })
+
+          const menus = api.query(Prismic.Predicates.at('document.type', 'menus'))
+          .then(response => {
+              return response.results.map(payload => {
+              return {
+                  route: `/menus/${payload.uid}`,
+                  payload
+              }
+              })          
+          })
+            return Promise.all([blogPosts, menus]).then(values => {
+                return [...values[0], ...values[1]]
+            })
+    }
   }
 }

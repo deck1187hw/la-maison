@@ -38,7 +38,26 @@ export default {
       documentId: null
     };
   },
+  methods: {
+      testGenerate: async function () {
+           const api = await Prismic.getApi(PrismicConfig.apiEndpoint);
+ 
+            const menus = api.query(Prismic.Predicates.at('document.type', 'menus'))
+                .then(response => {
+                    return response.results.map(payload => {
+                    return {
+                        route: `/menus/${payload.uid}`,
+                        payload
+                    }
+                    })          
+                })
+                return Promise.all([menus]).then(values => {
+                    return [...values[0]]
+                })
+      }
+  },
   created() {
+      this.testGenerate()
     if (process.browser) {
       let sc1 = document.createElement("script");
       sc1.setAttribute("src", "/js/scripts.js");
