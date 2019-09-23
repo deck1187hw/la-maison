@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-     <div class="edit1 hidden-xs">
+    <div class="edit1 hidden-xs">
       <prismic-edit-button :documentId="documentId" />
     </div>
     <section class="switchable">
@@ -10,40 +10,82 @@
             <b-img :src="document.image.url" fluid :alt="document.text_contact.text"></b-img>
           </div>
           <div class="col-md-6">
-             <div class="boxed boxed--lg boxed--border bg--secondary">
-            <Contentprismic v-bind:items="document.text_contact" />
-            <div class="row mx-0 switchable__text flex-column">
-              <p class="lead">
-                E:
-                <a :href="`mailto:${document.email}`">{{document.email}}</a>
-                <br />
-                P: {{document.phone}}
-              </p>
+            <div class="boxed boxed--lg boxed--border bg--secondary">
+              <Contentprismic v-bind:items="document.text_contact" />
+              <div class="row mx-0 switchable__text flex-column">
+                <p class="lead">
+                  E:
+                  <a :href="`mailto:${document.email}`">{{document.email}}</a>
+                  <br />
+                  P: {{document.phone}}
+                </p>
 
-              <hr class="short" />
-              <form
-              name="contact" netlify class="form-email row"          
-              >
-                <div class="col-md-6">
-                  <label>Your Name:</label>
-                  <input type="text" name="name" class="validate-required" />
-                </div>
-                <div class="col-md-6">
-                  <label>Email Address:</label>
-                  <input type="email" name="email" class="validate-required validate-email" />
-                </div>
-                <div class="col-md-12">
-                  <label>Message:</label>
-                  <textarea rows="4" name="Message" class="validate-required"></textarea>
-                </div>
-                <div class="col-md-5 col-lg-4">
-                  <button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
-                </div>
-              </form>
-              <hr class="short" />
-              <Contentprismic v-bind:items="document.text_contact_below" />
+                <hr class="short" />
+                <form name="contact" netlify class="form-email row">
+                  <div class="col-md-6">
+                    <label>Your Name:</label>
+                    <input
+                    v-model="form.name"
+                      type="text"
+                      name="name"
+                      placeholder="Your full name"
+                      class="validate-required"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label>Phone:</label>
+                    <input
+                    v-model="form.phone"
+                      type="text"
+                      placeholder="Your phone"
+                      name="phone"
+                      class="validate-required"
+                    />
+                  </div>
+                  <div class="col-md-12">
+                    <label>Email Address:</label>
+                    <input
+                    v-model="form.email"
+                      type="email"
+                      name="email"
+                      placeholder="Your email address"
+                      class="validate-required validate-email"
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <label>I am interested in:</label>
+  
+                    <select class="browser-default custom-select" name="Interested_In" v-model="form.interested">
+                      <option selected :value="0">-- Please select --</option>
+                      <option
+                        :value="item.data.title[0].text"
+                        v-for="(item, index) in menus"
+                        :key="index"
+                      >{{item.data.title[0].text}}</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Your query :</label>
+                    <textarea
+                      rows="4"
+                      v-model="form.message"
+                      name="Message"
+                      class="validate-required"
+                      placeholder="Ask us anything..."
+                    ></textarea>
+                    <p>Please let us know what kind of</p>
+                  </div>
+
+                  <div class="col-md-5 col-lg-4">
+                    <button :disabled="!validForm" type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
+                  </div>
+                </form>
+                <hr class="short" />
+                <Contentprismic v-bind:items="document.text_contact_below" />
+              </div>
             </div>
-             </div>
           </div>
         </div>
       </div>
@@ -62,8 +104,27 @@ export default {
   data: function() {
     return {
       document: null,
-      documentId: null
+      form: {
+        interested: 0,
+        name: '',
+        email: '',
+        phone: ''
+      },
+      documentId: null,
+      menus: null
     };
+  },
+  methods: {
+      
+  },
+  computed: {
+      validForm() {
+        if(this.form.interested === 0 || this.form.email === '' || this.form.name === '' || this.form.phone === ''){
+          return false
+        }else{
+          return true
+        }
+      }
   },
   created() {},
   async asyncData({ context, error, req }) {
@@ -74,12 +135,19 @@ export default {
       const result = await api.getSingle("contact");
       document = result.data;
 
+      let menus = {};
+      const resultmenus = await api.query(
+        Prismic.Predicates.at("document.type", "menus")
+      );
+      menus = resultmenus;
+
       // Load the edit button
       if (process.client) window.prismic.setupEditButton();
 
       return {
         document,
-        documentId: result.id
+        documentId: result.id,
+        menus: resultmenus.results
       };
     } catch (e) {
       error({ statusCode: 404, message: "Page not found" });
