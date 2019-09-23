@@ -14,19 +14,19 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 col-md-7">
-            <h2>{{item.data.title[0].text}}</h2>         
-            <!--<p>
+            <h2>{{item.data.title[0].text}}</h2>        
+            <p>
               <nuxt-link class="btn btn--lg type--uppercase btn--primary" :to="`/menus/${item.uid}`">
                 <span class="btn__text">View menu</span>
               </nuxt-link>
-            </p>-->
+            </p>
             <p v-if="item.data.pdf_menu.url">
+                <i class="icon-doc icons"></i>
               <a
                 :href="item.data.pdf_menu.url"
-                class="btn btn--lg type--uppercase btn--primary" 
                 target="_blank"
                 alt="Download menu"
-              ><span class="btn__text">  <i class="icon-doc icons"></i> View menu </span></a>
+              ><span class="btn__text"> Download PDF menu </span></a>
 
             
             </p>

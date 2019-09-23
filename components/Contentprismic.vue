@@ -7,6 +7,11 @@
       <h3 v-if="item.type=='heading3'">{{item.text}}</h3>
       <h4 v-if="item.type=='heading4'">{{item.text}}</h4>
       <h5 v-if="item.type=='heading5'">{{item.text}}</h5>
+
+      <div class="list-item" v-if="item.type == 'list-item'">
+          {{item.text}}
+      </div>
+
       <p v-else-if="item.type=='image'" class="imig-cont">
         <b-img :src="item.url" fluid :alt="item.alt"></b-img>
       </p>
@@ -26,5 +31,9 @@ export default {
 }
 .main-paragraph {
   margin-bottom: 15px;
+}
+.list-item{
+  padding-left: 10px;
+  margin-bottom: 6px;
 }
 </style>
