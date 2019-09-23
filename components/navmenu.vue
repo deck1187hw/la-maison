@@ -71,9 +71,6 @@
                     <span class="btn__text">Contact us</span>
                   </nuxt-link>               
               </div>
-              <div class="bar__module">
-                 <span class="badge badge-pill badge-secondary">Secondary</span>            
-              </div>
             </div>
           </div>
         </div>
