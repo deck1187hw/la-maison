@@ -68,6 +68,9 @@ export default {
     'nuxt-simple-line-icons',
     '@nuxtjs/pwa',
     '@nuxtjs/moment',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-1974431-49'
+    }],
     ['nuxt-social-meta', {
       url: 'lamaisonmobilecatering.com',
       title: 'La Maison - Mobile BBQ Service in Sussex',
