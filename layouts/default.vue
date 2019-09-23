@@ -22,4 +22,13 @@ export default {
 };
 </script>
 <style>
+.edit1{
+  position:absolute;
+  top:0px;
+  padding:10px;
+}
+.edit1 img{
+  width:10px !important;
+  opacity: .5 !important;
+}
 </style>

@@ -58,7 +58,7 @@
             ©
             <span class="update-year"></span> LA MAISON - Mobile BBQ Service in Sussex
           </span>
-          <nuxt-link to="/menus" class="type--fine-print">
+          <nuxt-link to="/privacy" class="type--fine-print">
           Privacy Policy</nuxt-link>
           
         </div>

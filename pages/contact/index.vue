@@ -7,6 +7,7 @@
             <b-img :src="document.image.url" fluid :alt="document.text_contact.text"></b-img>
           </div>
           <div class="col-md-6">
+             <div class="boxed boxed--lg boxed--border bg--secondary">
             <Contentprismic v-bind:items="document.text_contact" />
             <div class="row mx-0 switchable__text flex-column">
               <p class="lead">
@@ -41,6 +42,7 @@
               <hr class="short" />
               <Contentprismic v-bind:items="document.text_contact_below" />
             </div>
+             </div>
           </div>
         </div>
       </div>

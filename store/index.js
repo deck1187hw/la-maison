@@ -28,6 +28,7 @@ export const actions = {
         commit("SET_NAVIGATION", navigation);
   
       } catch (e) {
+        console.log('e: ',e)
         error({ statusCode: 404, message: "Page not found" });
       }
    

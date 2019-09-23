@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
     <section
-      class="imageblock switchable feature-large bg--secondary space--sm"
+      class="imageblock switchable feature-large bg--secondary space--xs bg-maison__white"
       v-for="(item, index) in document.results"
       :key="index"
       :class="{'switchable--switch': index % 2 !== 0 }"
@@ -14,22 +14,21 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 col-md-7">
-            <h2>{{item.data.title[0].text}}</h2>
-            <p
-              class="lead"
-            >Description about menu</p>
-            <p>
-              <nuxt-link class="btn btn--lg type--uppercase" :to="`/menus/${item.uid}`">
+            <h2>{{item.data.title[0].text}}</h2>         
+            <!--<p>
+              <nuxt-link class="btn btn--lg type--uppercase btn--primary" :to="`/menus/${item.uid}`">
                 <span class="btn__text">View menu</span>
               </nuxt-link>
-            </p>
+            </p>-->
             <p v-if="item.data.pdf_menu.url">
-              <i class="icon-doc icons"></i>
               <a
                 :href="item.data.pdf_menu.url"
+                class="btn btn--lg type--uppercase btn--primary" 
                 target="_blank"
                 alt="Download menu"
-              >Download PDF menu</a>
+              ><span class="btn__text">  <i class="icon-doc icons"></i> View menu </span></a>
+
+            
             </p>
           </div>
         </div>
@@ -81,5 +80,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.bg-maison__white {
+  background: url("/img/bg2.png") white;
+}
 </style>

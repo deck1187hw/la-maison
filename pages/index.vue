@@ -267,12 +267,4 @@ export default {
 .bg-maison__white {
   background: url("/img/bg2.png") white;
 }
-.edit1{
-  position:absolute;
-  top:0px;
-  padding:10px;
-}
-.edit1 img{
-  width:10px
-}
 </style>
