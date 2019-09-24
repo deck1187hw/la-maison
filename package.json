@@ -5,8 +5,8 @@
   "author": "Miguel Puig",
   "private": true,
   "scripts": {  
+    "predeploy": "start-server-and-test dev http://localhost:3000 cy:run",
     "deploy": "npm run generate",
-    "postdeploy": "npm run cy:run",
     "dev": "nuxt",
     "cy:run": "cypress run",
     "build": "nuxt build",
