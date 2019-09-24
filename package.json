@@ -4,7 +4,7 @@
   "description": "Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties",
   "author": "Miguel Puig",
   "private": true,
-  "scripts": {  
+  "scripts": {
     "predeploy": "CI=1 npm i cypress; start-server-and-test dev http://localhost:3000 cy:run",
     "deploy": "npm run generate",
     "dev": "nuxt",
