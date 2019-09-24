@@ -5,7 +5,7 @@
   "author": "Miguel Puig",
   "private": true,
   "scripts": {  
-    "predeploy": "start-server-and-test dev http://localhost:3000 cy:run",
+    "predeploy": "CI=1 npm i cypress; start-server-and-test dev http://localhost:3000 cy:run",
     "deploy": "npm run generate",
     "dev": "nuxt",
     "cy:run": "cypress run",
