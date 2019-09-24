@@ -6,8 +6,8 @@
           <div class="row">
             <div class="col-3 col-md-2">
               <nuxt-link :to="`/`">
-                <img class="logo logo-dark" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/ffdb5088ccda770803b31eb87dc1e469263df108_logo-dark.png" />
-                <img class="logo logo-light" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
+                <img class="logo logo-dark" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2F612d396f-83ea-404d-b1fc-856a3a6ba2b0_logo-dark.png" />
+                <img class="logo logo-light" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2Fe25bef4c-8ed7-4969-89d9-622836a2f63f_logo-light.png" />
               </nuxt-link>
             </div>
             <div class="col-9 col-md-10 text-right">
@@ -24,8 +24,8 @@
             <div class="col-lg-2 text-center text-left-sm hidden-xs order-lg-2">
               <div class="bar__module">
                 <nuxt-link :to="`/`">
-                  <img class="logo logo-dark" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/ffdb5088ccda770803b31eb87dc1e469263df108_logo-dark.png" />
-                  <img class="logo logo-light" alt="logo" src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png" />
+                  <img class="logo logo-dark" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2F612d396f-83ea-404d-b1fc-856a3a6ba2b0_logo-dark.png" />
+                  <img class="logo logo-light" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2Fe25bef4c-8ed7-4969-89d9-622836a2f63f_logo-light.png" />
                  </nuxt-link>
               </div>
             </div>

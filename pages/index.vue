@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-md-9 col-lg-8">
             <b-img
-              src="https://maisonbbq.cdn.prismic.io/maisonbbq/67bf982f2e292aff83feb64d03b69d7d54773e79_logo-light.png"
+              src="https://prismic-io.s3.amazonaws.com/maisonbbq%2Fe25bef4c-8ed7-4969-89d9-622836a2f63f_logo-light.png"
               fluid
               alt="LA MAISON"
             ></b-img>
@@ -26,11 +26,11 @@
         <div class="row justify-content-between">
           <div class="col-md-6">
             <div class="heading-block">
-              <h2>Mobile BBQ Service in Sussex</h2>
+              <h2>Catering Service in Sussex</h2>
             </div>
             <div class="text-block">
               <p class="lead">
-                <b>LA MAISON – Mobile BBQ Service</b> company is located in Sussex. We are the Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties.
+                <b>LA MAISON – Catering Service</b> company is located in Sussex. We are the Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties.
               </p>
               <p>
                 We use
