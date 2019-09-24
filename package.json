@@ -4,12 +4,17 @@
   "description": "Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties",
   "author": "Miguel Puig",
   "private": true,
-  "scripts": {
+  "scripts": {  
+    "deploy": "npm run generate",
+    "postdeploy": "npm run cy:run",
     "dev": "nuxt",
+    "cy:run": "cypress run",
     "build": "nuxt build",
+    "postbuild": "npm run dev & npm run e2e && fkill:3000",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "e2e:open": "cypress open"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
@@ -34,7 +39,10 @@
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/moment": "^1.3.0",
     "babel-eslint": "^10.0.1",
+    "cypress": "^3.4.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2"
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "fkill": "^6.2.0",
+    "start-server-and-test": "^1.10.2"
   }
 }
