@@ -8,13 +8,13 @@
     "predeploy": "CI=1 npm i cypress; start-server-and-test dev http://localhost:3000 cy:run",
     "deploy": "npm run generate",
     "dev": "nuxt",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --record --key 9b039a9a-7e75-45e6-ba7e-30781169ce82",
     "build": "nuxt build",
     "postbuild": "npm run dev & npm run e2e && fkill:3000",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "e2e:open": "cypress open"
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
