@@ -11,7 +11,7 @@ describe('IG test', function(){
     it('Should have access to about us', function() {
         cy.visit('https://lamaisonmobilecatering.com/')        
         cy.get('.menu-horizontal').contains('About').click()
-        cy.url().should('include', 'about')
+        cy.url().should('include', 'deletethis')
         cy.get('h1').contains('About')
 
     })
