@@ -123,8 +123,8 @@
         <div class="row">
           <div class="col-md-4" v-for="(item, index) in blogs.results" :key="index">
             <article class="feature feature-1">
-              <nuxt-link :to="`/blog/${item.uid}`" class="block">
-                <b-img :src="item.data.main_image.url" fluid :alt="item.data.title[0].text"></b-img>
+              <nuxt-link :to="`/blog/${item.uid}`" class="block wrpimg">
+                <b-img :src="item.data.main_image.url" fluid :alt="item.data.title[0].text" class="img-bl"></b-img>
               </nuxt-link>
               <div class="feature__body boxed boxed--border">
                 <h5>{{item.data.title[0].text}}</h5>
@@ -243,9 +243,7 @@ export default {
       menus = resultmenus;
 
       let blogs = {};
-      const resultblogs = await api.query(
-        Prismic.Predicates.at("document.type", "blog")
-      );
+      const resultblogs = await api.query(Prismic.Predicates.at("document.type", "blog"),{ pageSize : 3 })
       blogs = resultblogs;
 
       // Load the edit button
@@ -276,5 +274,13 @@ export default {
   bottom:20px;
   right:20px;
   width: 140px;
+}
+.wrpimg{
+  height: 150px;
+  overflow: hidden;
+  background: black;
+}
+.img-bl{
+  width: 100%
 }
 </style>
