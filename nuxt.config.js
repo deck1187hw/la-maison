@@ -97,13 +97,16 @@ export default {
         twitter: "@bbqmaison",
         themeColor: "#bb4a28"
       },
-      '@nuxtjs/sitemap'
-    ]
+    ],
+    '@nuxtjs/sitemap'
   ],
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://lamaisonmobilecatering.com',
     generate: true,
+    exclude: [
+      '/contact/success'
+    ],
     routes: async function() {
       return getAppRoutes()
     }
