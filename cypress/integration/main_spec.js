@@ -1,6 +1,4 @@
-
-
-describe('IG test', function(){
+describe('Main tests', function(){
     it('Should have menus', function() {
         cy.visit('/')
         cy.get('.menu-horizontal').contains('Menus').click()
@@ -14,5 +12,8 @@ describe('IG test', function(){
         cy.url().should('include', 'about')
         cy.get('h1').contains('About')
 
+    })
+    it('Should exist sitemap', function() {
+        cy.request('/sitemap.xml').its('body').should('include', '<loc>')
     })
 })
