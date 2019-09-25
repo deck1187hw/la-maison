@@ -23,7 +23,7 @@
                 <hr class="short" />
                 
 
-                <form name="contact" method="POST" data-netlify="true">
+                <form name="contactus" method="POST" data-netlify="true">
 <div class="col-md-6">
     <label>Your Name: <input type="text" name="name" /></label>   
 </div>
