@@ -21,35 +21,65 @@
                 </p>
 
                 <hr class="short" />
-                
 
-                <form name="contactus2" method="POST" data-netlify="true" action="/pages/success">
-<div class="col-md-6">
-    <label>Your Name: <input type="text" name="name" /></label>   
-</div>
-  <div class="col-md-6">
-    <label>Your Email: <input type="email" name="email" /></label>
-  </div>
-   <div class="col-md-12">
-          <label>I am interested in:</label>
-
-          <select class="browser-default custom-select" name="Interested_In">
-            <option selected :value="0">-- Please select --</option>
-            <option
-              :value="item.data.title[0].text"
-              v-for="(item, index) in menus"
-              :key="index"
-            >{{item.data.title[0].text}}</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-  <div class="col-md-6">
-    <label>Message: <textarea name="message"></textarea></label>
-  </div>
- <div class="col-md-5 col-lg-4">
-                    <button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
+                <form name="contactus3" method="POST" data-netlify="true" action="/contact/success">
+                <div class="row">
+                  <div class="col col-md-12">
+                    <label>
+                      Your Name *:
+                      <input type="text" name="name" v-model="form.name" placeholder="Your full name" />
+                    </label>
                   </div>
-</form>
+                  <div class="col col-md-12">
+                    <label>
+                      Your Phone *:
+                      <input type="text" name="phone" v-model="form.phone" placeholder="Your phone" />
+                    </label>
+                  </div>
+                  <div class="col col-md-12">
+                    <label>
+                      Your Email *:
+                      <input type="email" name="email" v-model="form.email" placeholder="Your email" />
+                    </label>
+                  </div>
+                  <div class="col-md-12">
+                    <label>I am interested in *:</label>
+
+                    <select
+                      class="browser-default custom-select"
+                      name="Interested_In"
+                      v-model="form.interested"
+                    >
+                      <option selected :value="0">-- Please select --</option>
+                      <option
+                        :value="item.data.title[0].text"
+                        v-for="(item, index) in menus"
+                        :key="index"
+                      >{{item.data.title[0].text}}</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Message:</label>
+                    <textarea name="message" placeholder="Tell us a bit more about your query..."></textarea>
+                  </div>
+                      <div class="col-md-12" v-show="!validForm">
+                    <div class="alert bg--error">
+                      <div class="alert__body">
+                        <span>Please write your name, email, phone and select what you are interested in.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <button
+                      :disabled="!validForm"
+                      type="submit"
+                      class="btn block btn--primary type--uppercase"
+                    >Send Enquiry</button>
+                  </div>
+                </div>
+              
+                </form>
                 <hr class="short" />
                 <Contentprismic v-bind:items="document.text_contact_below" />
               </div>
@@ -74,25 +104,28 @@ export default {
       document: null,
       form: {
         interested: 0,
-        name: '',
-        email: '',
-        phone: ''
+        name: "",
+        email: "",
+        phone: ""
       },
       documentId: null,
       menus: null
     };
   },
-  methods: {
-      
-  },
+  methods: {},
   computed: {
-      validForm() {
-        if(this.form.interested === 0 || this.form.email === '' || this.form.name === '' || this.form.phone === ''){
-          return false
-        }else{
-          return true
-        }
+    validForm() {
+      if (
+        this.form.interested === 0 ||
+        this.form.email === "" ||
+        this.form.name === "" ||
+        this.form.phone === ""
+      ) {
+        return false;
+      } else {
+        return true;
       }
+    }
   },
   created() {},
   async asyncData({ context, error, req }) {
