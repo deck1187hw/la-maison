@@ -31,19 +31,19 @@
                   <div class="col col-md-12">
                     <label>
                       Your Name *:
-                      <input type="text" name="name"  placeholder="Your full name" />
+                      <input type="text" name="name"  v-model="form.name" placeholder="Your full name" />
                     </label>
                   </div>
                   <div class="col col-md-12">
                     <label>
                       Your Phone *:
-                      <input type="text" name="phone"  placeholder="Your phone" />
+                      <input type="text" name="phone" v-model="form.phone" placeholder="Your phone" />
                     </label>
                   </div>
                   <div class="col col-md-12">
                     <label>
                       Your Email *:
-                      <input type="email" name="email"  placeholder="Your email" />
+                      <input type="email" name="email" v-model="form.email" placeholder="Your email" />
                     </label>
                   </div>
                   <div class="col col-md-12">
@@ -52,6 +52,7 @@
                     <select
                       class="browser-default custom-select"
                       name="interested_in"
+                      v-model="form.interested"
                     >
                       <option selected :value="0">-- Please select --</option>
                       <option
@@ -74,7 +75,8 @@
                     </div>
                   </div>
                   <div class="col col-md-12">
-                    <button                      
+                    <button     
+                     :disabled="!validForm"                 
                       type="submit"
                       class="btn block btn--primary type--uppercase"
                     >Send Enquiry</button>
