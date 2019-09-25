@@ -19,8 +19,13 @@
             </li>
             <li>
               <nuxt-link to="/menus/">
-                <span class="h6 type--uppercase">Menus</span>
+                <span class="h6 type--uppercase">Our Menus</span>
               </nuxt-link>
+            </li>
+             <li>
+              <a href="/sitemap.xml" target="_blank">
+                <span class="h6 type--uppercase">Sitemap</span>
+              </a>
             </li>
           </ul>
            <div class="">

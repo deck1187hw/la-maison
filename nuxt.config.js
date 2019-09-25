@@ -1,12 +1,8 @@
 const PrismicConfig = require("./prismic.config");
-import Prismic from "prismic-javascript";
 const getAppRoutes = require('./utils/getRoutes.js');
 
 export default {
   mode: "universal",
-  /*
-   ** Headers of the page
-   */
   head: {
     title: "La Maison - Mobile BBQ Service in Sussex",
     meta: [
