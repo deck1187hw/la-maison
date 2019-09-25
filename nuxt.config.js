@@ -1,5 +1,6 @@
 const PrismicConfig = require("./prismic.config");
 import Prismic from "prismic-javascript";
+const getAppRoutes = require('./utils/getRoutes.js');
 
 export default {
   mode: "universal",
@@ -95,17 +96,22 @@ export default {
         locale: "en_GB",
         twitter: "@bbqmaison",
         themeColor: "#bb4a28"
-      }
+      },
+      '@nuxtjs/sitemap'
     ]
   ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://lamaisonmobilecatering.com',
+    generate: true,
+    routes: async function() {
+      return getAppRoutes()
+    }
+  },
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`
     bootstrapVueCSS: true // Or `bvCSS: false`
   },
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
   axios: {},
   /*
    ** Build configuration
@@ -120,34 +126,8 @@ export default {
   },
   generate: {
     // https://nebulab.it/blog/create-fast-nuxtjs-website-prismic/
-
     routes: async function() {
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint);
-
-      const blogPosts = api
-        .query(Prismic.Predicates.at("document.type", "blog"))
-        .then(response => {
-          return response.results.map(payload => {
-            return {
-              route: `/blog/${payload.uid}`,
-              payload
-            };
-          });
-        });
-
-      const menus = api
-        .query(Prismic.Predicates.at("document.type", "menus"))
-        .then(response => {
-          return response.results.map(payload => {
-            return {
-              route: `/menus/${payload.uid}`,
-              payload
-            };
-          });
-        });
-      return Promise.all([blogPosts, menus]).then(values => {
-        return [...values[0], ...values[1]];
-      });
+      return getAppRoutes()
     }
   }
 };
