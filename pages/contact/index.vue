@@ -21,67 +21,28 @@
                 </p>
 
                 <hr class="short" />
-                <form name="contact" class="form-email row"  method="POST" data-netlify="true">
-                  <div class="col-md-6">
-                    <label>Your Name:</label>
-                    <input
+                
 
-                      type="text"
-                      name="name"
-                      placeholder="Your full name"
-                      class="validate-required"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <label>Phone:</label>
-                    <input
-         
-                      type="text"
-                      placeholder="Your phone"
-                      name="phone"
-                      class="validate-required"
-                    />
-                  </div>
-                  <div class="col-md-12">
-                    <label>Email Address:</label>
-                    <input
-
-                      type="email"
-                      name="email"
-                      placeholder="Your email address"
-                      class="validate-required validate-email"
-                    />
-                  </div>
-
-                  <div class="col-md-12">
-                    <label>I am interested in:</label>
-  
-                    <select class="browser-default custom-select" name="Interested_In">
-                      <option selected :value="0">-- Please select --</option>
-                      <option
-                        :value="item.data.title[0].text"
-                        v-for="(item, index) in menus"
-                        :key="index"
-                      >{{item.data.title[0].text}}</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                  <div class="col-md-12">
-                    <label>Your query :</label>
-                    <textarea
-                      rows="4"
-
-                      name="Message"
-                      class="validate-required"
-                      placeholder="Ask us anything..."
-                    ></textarea>
-                    <p>Please let us know what kind of</p>
-                  </div>
-
-                  <div class="col-md-5 col-lg-4">
+                <form name="contact" method="POST" data-netlify="true">
+<div class="col-md-6">
+    <label>Your Name: <input type="text" name="name" /></label>   
+</div>
+  <div class="col-md-6">
+    <label>Your Email: <input type="email" name="email" /></label>
+  </div>
+  <div class="col-md-6">
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </div>
+  <div class="col-md-6">
+    <label>Message: <textarea name="message"></textarea></label>
+  </div>
+ <div class="col-md-5 col-lg-4">
                     <button type="submit" class="btn btn--primary type--uppercase">Send Enquiry</button>
                   </div>
-                </form>
+</form>
                 <hr class="short" />
                 <Contentprismic v-bind:items="document.text_contact_below" />
               </div>
