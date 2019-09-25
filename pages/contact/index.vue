@@ -22,10 +22,10 @@
 
                 <hr class="short" />
 
-                <form name="contactus5" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form name="contactus5" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/success/">
                   <p class="hidden">
-    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-  </p>
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                  </p>
                   <input type="hidden" name="form-name" value="contactus5" />
                 <div class="row">
                   <div class="col col-md-12">
