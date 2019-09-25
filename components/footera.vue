@@ -23,7 +23,14 @@
               </nuxt-link>
             </li>
           </ul>
+           <div class="">
+                  Email:
+                  <a :href="`mailto:${document.email}`">{{document.email}}</a>
+                  <br />
+                  Phone: <a :href="`tel:${document.phone}`">{{document.phone}}</a>
+                </div>
         </div>
+       
         <div class="col-sm-6 text-right text-center-xs">
           <ul class="social-list list-inline list--hover">
             <li>
@@ -76,6 +83,10 @@ export default {
   components: {CookieLaw},
   data: function() {
     return {
+      document: {
+        phone: '+44 (0)7539957483',
+        email: 'info@lamaisonmobilecatering.com'
+      }
     };
   },
   computed: {
