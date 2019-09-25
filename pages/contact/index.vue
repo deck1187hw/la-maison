@@ -70,8 +70,7 @@
                     </div>
                   </div>
                   <div class="col col-md-12">
-                    <button
-                      :disabled="!validForm"
+                    <button                      
                       type="submit"
                       class="btn block btn--primary type--uppercase"
                     >Send Enquiry</button>
