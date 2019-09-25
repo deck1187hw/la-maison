@@ -23,19 +23,14 @@
                 <hr class="short" />
                 
 
-                <form name="contactus" method="POST" data-netlify="true">
+                <form name="contactus1" method="POST" data-netlify="true" action="/pages/success">
 <div class="col-md-6">
     <label>Your Name: <input type="text" name="name" /></label>   
 </div>
   <div class="col-md-6">
     <label>Your Email: <input type="email" name="email" /></label>
   </div>
-  <div class="col-md-6">
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </div>
+
   <div class="col-md-6">
     <label>Message: <textarea name="message"></textarea></label>
   </div>
