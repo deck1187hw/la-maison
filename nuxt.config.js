@@ -40,6 +40,7 @@ export default {
           "https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700"
       },
       { rel: "stylesheet", href: "/css/bootstrap.css" },
+      { rel: "stylesheet", href: "/css/socicon.css" },
       { rel: "stylesheet", href: "/css/theme.css" },
       { rel: "stylesheet", href: "/css/flickity.css" },
       { rel: "stylesheet", href: "/css/stack-interface.css" }

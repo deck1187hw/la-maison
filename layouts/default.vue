@@ -14,23 +14,24 @@ export default {
     navmenu,
     footera
   },
-  created() {
- 
-  },
+  created() {},
   mounted() {}
 };
 </script>
 <style>
-.edit1{
-  position:absolute;
-  top:0px;
-  padding:10px;
+.edit1 {
+  position: absolute;
+  top: 0px;
+  padding: 10px;
 }
-.edit1 img{
-  width:10px !important;
-  opacity: .5 !important;
+.edit1 img {
+  width: 10px !important;
+  opacity: 0.5 !important;
 }
-h1,h2,h3,h4{
-color:#bb4a28
+h1,
+h2,
+h3,
+h4 {
+  color: #bb4a28;
 }
 </style>

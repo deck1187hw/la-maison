@@ -8,6 +8,9 @@
         <div class="row justify-content-between">
           <div class="col-md-5">
             <b-img :src="document.image.url" fluid :alt="document.text_contact.text"></b-img>
+            <hr>
+            <h5>Follow us</h5>
+            <Social />
           </div>
           <div class="col-md-6">
             <div class="boxed boxed--lg boxed--border bg--secondary">
@@ -98,10 +101,12 @@
 <script>
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
+import Social from "~/components/Social.vue";
 import Contentprismic from "~/components/Contentprismic.vue";
 export default {
   components: {
-    Contentprismic
+    Contentprismic,
+    Social
   },
   data: function() {
     return {
