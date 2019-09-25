@@ -7,13 +7,13 @@
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-md-7">
-              <div class="boxed boxed--border bg--secondary boxed--lg box-shadow bg-maison__white">
-            <div class="title" v-html="Dom.RichText.asHtml(document.title)"></div>
-            <div class="lead" v-html="Dom.RichText.asHtml(document.top_description)"></div>
-            <div v-html="Dom.RichText.asHtml(document.menu_content)"></div>
-            <hr />
-            <div v-html="Dom.RichText.asHtml(document.bottom_description)"></div>
-              </div>
+            <div class="boxed boxed--border bg--secondary boxed--lg box-shadow bg-maison__white">
+              <div class="title" v-html="Dom.RichText.asHtml(document.title)"></div>
+              <div class="lead" v-html="Dom.RichText.asHtml(document.top_description)"></div>
+              <div v-html="Dom.RichText.asHtml(document.menu_content)"></div>
+              <hr />
+              <div v-html="Dom.RichText.asHtml(document.bottom_description)"></div>
+            </div>
           </div>
           <div class="col-md-5">
             <div class="boxed boxed--border bg--secondary boxed--lg box-shadow">
@@ -24,6 +24,21 @@
                   <span class="btn__text">Download PDF menu</span>
                 </a>
               </p>
+              <hr />
+
+              <div
+                class="slider"
+                data-arrows="true"
+                data-timing="5000"
+                data-paging="true"
+                v-if="document.photos_side.length>0"
+              >
+                <ul class="slides">
+                  <li v-for="(item, index) in document.photos_side" :key="index">
+                    <b-img :src="item.photo_menu.url" :alt="Dom.RichText.asText(document.title)"></b-img>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -49,9 +64,7 @@ export default {
     }
     return {
       title: this.document.title[0].text,
-      meta: [
-        { hid: "description", name: "description", content: description }
-      ]
+      meta: [{ hid: "description", name: "description", content: description }]
     };
   },
   data: function() {
@@ -88,5 +101,4 @@ export default {
 </script>
 
 <style>
-
 </style>
