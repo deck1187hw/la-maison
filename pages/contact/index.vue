@@ -22,7 +22,7 @@
 
                 <hr class="short" />
 
-                <form name="contactus3" method="POST" data-netlify="true" action="/contact/success">
+                <form name="contactus3" method="POST" data-netlify="true" action="/contact/success/">
                 <div class="row">
                   <div class="col col-md-12">
                     <label>
