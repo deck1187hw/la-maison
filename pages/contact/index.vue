@@ -22,33 +22,32 @@
 
                 <hr class="short" />
 
-                <form name="contactus4" method="POST" data-netlify="true" action="/contact/success/">
+                <form name="contactus5" method="POST" data-netlify="true">
                 <div class="row">
                   <div class="col col-md-12">
                     <label>
                       Your Name *:
-                      <input type="text" name="name" v-model="form.name" placeholder="Your full name" />
+                      <input type="text" name="name"  placeholder="Your full name" />
                     </label>
                   </div>
                   <div class="col col-md-12">
                     <label>
                       Your Phone *:
-                      <input type="text" name="phone" v-model="form.phone" placeholder="Your phone" />
+                      <input type="text" name="phone"  placeholder="Your phone" />
                     </label>
                   </div>
                   <div class="col col-md-12">
                     <label>
                       Your Email *:
-                      <input type="email" name="email" v-model="form.email" placeholder="Your email" />
+                      <input type="email" name="email"  placeholder="Your email" />
                     </label>
                   </div>
-                  <div class="col-md-12">
+                  <div class="col col-md-12">
                     <label>I am interested in *:</label>
 
                     <select
                       class="browser-default custom-select"
                       name="Interested_In"
-                      v-model="form.interested"
                     >
                       <option selected :value="0">-- Please select --</option>
                       <option
@@ -59,7 +58,7 @@
                       <option value="Other">Other</option>
                     </select>
                   </div>
-                  <div class="col-md-12">
+                  <div class="col col-md-12">
                     <label>Message:</label>
                     <textarea name="message" placeholder="Tell us a bit more about your query..."></textarea>
                   </div>
@@ -70,7 +69,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-12">
+                  <div class="col col-md-12">
                     <button
                       :disabled="!validForm"
                       type="submit"
