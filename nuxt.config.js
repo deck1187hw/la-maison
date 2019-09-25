@@ -3,6 +3,10 @@ const getAppRoutes = require('./utils/getRoutes.js');
 
 export default {
   mode: "universal",
+  env: {
+      baseUrl: process.env.BASE_URL,
+      liveUrl: "http://lamaisonmobilecatering.com/"
+  },
   head: {
     title: "La Maison - Mobile BBQ Service in Sussex",
     meta: [
@@ -58,6 +62,7 @@ export default {
   plugins: [
     "~/plugins/link-resolver.js",
     "~/plugins/html-serializer.js",
+    "~/plugins/vue-social-sharing.js",
     "~/plugins/prismic-vue.js",
     "~/plugins/vue-moment.js",
     { src: '~plugins/vue-cookie-law.js', ssr: false }
@@ -87,7 +92,7 @@ export default {
       {
         url: "lamaisonmobilecatering.com",
         title: "La Maison - Mobile BBQ Service in Sussex",
-        description: "Description site",
+        description: "Mobile BBQ catering specialists in the Sussex area. We love to cater and serve fantastic canapés, dinners, barbecues, buffets as well to design and organise beautiful weddings, corporate events and private parties",
         img: "img/head4.jpg",
         locale: "en_GB",
         twitter: "@bbqmaison",

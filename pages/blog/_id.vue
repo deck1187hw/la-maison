@@ -1,11 +1,11 @@
 <template>
   <div class="main-container">
-     <div class="edit1 hidden-xs">
+    <div class="edit1 hidden-xs">
       <prismic-edit-button :documentId="documentId" />
     </div>
     <section class="unpad">
       <article>
-        <div class="imagebg text-center height-50" data-overlay="8">
+        <div class="imagebg text-center height-50" data-overlay="5">
           <div class="background-image-holder">
             <b-img :src="document.main_image.url" :alt="document.title[0].text"></b-img>
           </div>
@@ -32,11 +32,81 @@
                 <Contentprismic v-bind:items="document.subtitle" />
                 <div class="article__body">
                   <div v-html="Dom.RichText.asHtml(document.main_text)"></div>
-                </div>                
+                </div>
+              </div>
+            </div>
+          </div>
+                    <hr />
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+      <h3>Share on...</h3>
+                 <client-only>
+          <social-sharing
+            :url="`${liveUrl}blog/${uid}`"
+            :title="`${document.title[0].text}`"
+            :description="`${getDescShort(Dom.RichText.asText(document.main_text), 500)}`"
+            :quote="`${getDescShort(Dom.RichText.asText(document.main_text), 500)}`"
+            hashtags="bbq,catering,sussex,mobile"
+            twitter-user="@bbqmaison"
+            inline-template
+          >
+            <div>
+              <network network="facebook">
+                <span class="btn">
+                  <span class="btn__text">
+                    <i class="socicon socicon-facebook icon icon--xs"></i> Facebook
+                  </span>
+                </span>
+              </network>
+
+              <network network="email">
+                <span class="btn">
+                  <span class="btn__text">
+                    <i class="socicon socicon-email icon icon--xs"></i> Email
+                  </span>
+                </span>
+              </network>
+
+              <network network="twitter">
+                <span class="btn">
+                  <span class="btn__text">
+                    <i class="socicon socicon-twitter icon icon--xs"></i> Twitter
+                  </span>
+                </span>
+              </network>
+
+              <network network="instagram">
+                <span class="btn">
+                  <span class="btn__text">
+                    <i class="socicon socicon-twitter icon icon--xs"></i> Instagram
+                  </span>
+                </span>
+              </network>
+
+              <network network="pinterest">
+                <span class="btn">
+                  <span class="btn__text">
+                    <i class="socicon socicon-pinterest icon icon--xs"></i> Pinterest
+                  </span>
+                </span>
+              </network>
+
+              <network network="whatsapp">
+                <span class="btn">
+                  <span class="btn__text">
+                    <i class="socicon socicon-whatsapp icon icon--xs"></i> Whatsapp
+                  </span>
+                </span>
+              </network>
+            </div>
+          </social-sharing>
+        </client-only>
               </div>
             </div>
           </div>
         </div>
+       
       </article>
     </section>
   </div>
@@ -65,11 +135,22 @@ export default {
       ]
     };
   },
+  methods: {
+    getDescShort(yourString, maxLength = 10) {
+      
+      let trimmedString = yourString.substr(0, maxLength);
+      //re-trim if we are in the middle of a word
+      trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+      return trimmedString
+    }
+  },
   data: function() {
     return {
       document: null,
       documentId: null,
-      Dom: PrismicDOM
+      liveUrl: process.env.liveUrl,
+      Dom: PrismicDOM,
+      uid: null
     };
   },
   created() {
@@ -94,6 +175,7 @@ export default {
 
       return {
         document,
+        uid: params.id,
         documentId: result.id
       };
     } catch (e) {

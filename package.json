@@ -33,7 +33,8 @@
     "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt",
     "simple-line-icons": "^2.4.1",
     "vue-cookie-law": "^1.10.0",
-    "vue-moment": "^4.0.0"
+    "vue-moment": "^4.0.0",
+    "vue-social-sharing": "^2.4.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

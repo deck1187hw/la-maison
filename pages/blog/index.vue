@@ -12,8 +12,8 @@
                   :key="index"
                 >
                   <article class="feature feature-1">
-                    <nuxt-link :to="`/blog/${item.uid}`" class="block">
-                      <b-img :src="item.data.main_image.url" fluid :alt="item.data.title[0].text"></b-img>
+                    <nuxt-link :to="`/blog/${item.uid}`" class="block wrpimg">
+                      <b-img :src="item.data.main_image.url" fluid :alt="item.data.title[0].text" class="img-bl"></b-img>
                     </nuxt-link>
                     <div class="feature__body boxed boxed--border">
                       <h5>{{item.data.title[0].text}}</h5>
@@ -49,9 +49,7 @@ export default {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
       let document = {};
-      const result = await api.query(
-        Prismic.Predicates.at("document.type", "blog")
-      );
+      const result = await api.query(Prismic.Predicates.at("document.type", "blog"),{ orderings : '[document.first_publication_date desc]' })
       document = result;
 
       // Load the edit button
@@ -67,5 +65,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.wrpimg{
+  height: 150px;
+  overflow: hidden;
+  background: black;
+}
+.img-bl{
+  width: 100%
+}
 </style>
