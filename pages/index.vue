@@ -144,7 +144,7 @@
         </div>
       </div>
     </section>
-    <section class="text-center bg--primary space--sm">
+    <section class="text-center bg--primary space--sm bg-maison">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10">
