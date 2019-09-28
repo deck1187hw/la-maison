@@ -10,7 +10,6 @@ describe('Main tests', function(){
         cy.visit('/')  
         cy.get('.menu-horizontal').contains('About La Maison').click()
         cy.url().should('include', 'about')
-        cy.get('h1').contains('About')
 
     })
     it('Should exist sitemap', function() {
