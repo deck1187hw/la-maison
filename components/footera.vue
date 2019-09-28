@@ -42,7 +42,7 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-                  <nuxt-link to="/privacy" class="type--fine-print">
+                  <nuxt-link to="/privacy/" class="type--fine-print">
            <span>Privacy Policy</span></nuxt-link>
 
 

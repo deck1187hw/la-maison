@@ -8,7 +8,7 @@
         <div class="row justify-content-between">
           <div class="col-md-7">
             <div class="boxed boxed--border bg--secondary boxed--lg box-shadow bg-maison__white">
-              <div class="title" v-html="Dom.RichText.asHtml(document.title)"></div>
+              <h1 class="title" v-html="Dom.RichText.asText(document.title)"></h1>
               <div class="lead" v-html="Dom.RichText.asHtml(document.top_description)"></div>
               <div v-html="Dom.RichText.asHtml(document.menu_content)"></div>
               <hr />
@@ -51,11 +51,9 @@
 import moment from "moment";
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
-import Contentprismic from "~/components/Contentprismic.vue";
 import PrismicDOM from "prismic-dom";
 export default {
   components: {
-    Contentprismic
   },
   head() {
     let description = "";

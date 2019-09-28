@@ -1,5 +1,18 @@
 <template>
   <div class="main-container">
+    <section class="bg--primary bg-maison space--sm">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h1>
+              La Maison Catering
+              <strong>Blog</strong>
+            </h1>
+            <p class="lead">Last updates, trends and receipes around BBQ and Catering.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="space--sm">
       <div class="container">
         <div class="row">
@@ -13,7 +26,12 @@
                 >
                   <article class="feature feature-1">
                     <nuxt-link :to="`/blog/${item.uid}`" class="block wrpimg">
-                      <b-img :src="item.data.main_image.url" fluid :alt="item.data.title[0].text" class="img-bl"></b-img>
+                      <b-img
+                        :src="item.data.main_image.url"
+                        fluid
+                        :alt="item.data.title[0].text"
+                        class="img-bl"
+                      ></b-img>
                     </nuxt-link>
                     <div class="feature__body boxed boxed--border">
                       <h5>{{item.data.title[0].text}}</h5>
@@ -43,13 +61,18 @@ export default {
       document: null
     };
   },
-  head () {
+  head() {
     return {
-      title: 'Our Blog - La Maison Catering',
+      title: "Our Blog - La Maison Catering",
       meta: [
-        { hid: 'description', name: 'description', content: 'Get the last trends on BBQ and catering.' }
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Get the last trends on BBQ and catering andlearn how to get the best out of your BBQ."
+        }
       ]
-    }
+    };
   },
   created() {},
   async asyncData({ context, error, req }) {
@@ -57,7 +80,10 @@ export default {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
       let document = {};
-      const result = await api.query(Prismic.Predicates.at("document.type", "blog"),{ orderings : '[document.first_publication_date desc]' })
+      const result = await api.query(
+        Prismic.Predicates.at("document.type", "blog"),
+        { orderings: "[document.first_publication_date desc]" }
+      );
       document = result;
 
       // Load the edit button
@@ -74,12 +100,12 @@ export default {
 </script>
 
 <style scoped>
-.wrpimg{
+.wrpimg {
   height: 150px;
   overflow: hidden;
   background: black;
 }
-.img-bl{
-  width: 100%
+.img-bl {
+  width: 100%;
 }
 </style>

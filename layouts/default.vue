@@ -19,7 +19,7 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://lamaisonmobilecatering.com' + this.$route.path,
+          href: 'https://lamaisonmobilecatering.com' + this.$route.path + '/',
         },
       ],
     }
@@ -43,5 +43,11 @@ h2,
 h3,
 h4 {
   color: #bb4a28;
+}
+.bg-maison {
+  background: url("/img/bg.png") #bb4a28;
+}
+.bg-maison__white {
+  background: url("/img/bg2.png") white;
 }
 </style>

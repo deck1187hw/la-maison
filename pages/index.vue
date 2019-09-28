@@ -263,12 +263,6 @@ export default {
 </script>
 
 <style scoped>
-.bg-maison {
-  background: url("/img/bg.png") #bb4a28;
-}
-.bg-maison__white {
-  background: url("/img/bg2.png") white;
-}
 .info-top-ab{
   position: absolute;
   bottom:20px;

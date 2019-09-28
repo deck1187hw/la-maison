@@ -1,5 +1,14 @@
 <template>
   <div class="main-container">
+             <section class="bg--primary bg-maison space--sm">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h1>Privacy Policy</h1>
+          </div>
+        </div>
+      </div>
+     </section>
     <section class="switchable">
       <div class="container">
         <div class="row justify-content-between">
