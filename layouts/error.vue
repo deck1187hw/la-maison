@@ -7,7 +7,7 @@
                         <div class="col-md-10 col-lg-8">
                             <h1 v-if="error.statusCode === 404">Page not found</h1>
                             <h1 v-else>An error occurred</h1>
-                            <p class="lead">  <nuxt-link to="/">Home page</nuxt-link> </p>
+                            <p class="lead">  <a href="/">Home page</a> </p>
                         </div>
                     </div>
                 </div>

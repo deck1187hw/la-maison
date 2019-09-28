@@ -5,10 +5,10 @@
         <div class="container">
           <div class="row">
             <div class="col-3 col-md-2">
-              <nuxt-link :to="`/`">
+              <a href="/">
                 <img class="logo logo-dark" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2F612d396f-83ea-404d-b1fc-856a3a6ba2b0_logo-dark.png" />
                 <img class="logo logo-light" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2Fe25bef4c-8ed7-4969-89d9-622836a2f63f_logo-light.png" />
-              </nuxt-link>
+              </a>
             </div>
             <div class="col-9 col-md-10 text-right">
               <a href="#" class="hamburger-toggle" data-toggle-class="#menu2;hidden-xs hidden-sm">
@@ -23,10 +23,10 @@
           <div class="row">
             <div class="col-lg-2 text-center text-left-sm hidden-xs order-lg-2">
               <div class="bar__module">
-                <nuxt-link :to="`/`">
+                 <a href="/">
                   <img class="logo logo-dark" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2F612d396f-83ea-404d-b1fc-856a3a6ba2b0_logo-dark.png" />
                   <img class="logo logo-light" alt="logo" src="https://prismic-io.s3.amazonaws.com/maisonbbq%2Fe25bef4c-8ed7-4969-89d9-622836a2f63f_logo-light.png" />
-                 </nuxt-link>
+                 </a>
               </div>
             </div>
             <div class="col-lg-5 order-lg-1">
@@ -37,10 +37,10 @@
                     :key="index"
                     v-bind:class="{ dropdown: item.items.length > 0 }"
                   >
-                    <nuxt-link
+                    <a
                       v-if="item.items.length === 0"
-                      :to="item.primary.sub_navi_link"
-                    >{{item.primary.label[0].text}}</nuxt-link>
+                      :href="item.primary.sub_navi_link"
+                    >{{item.primary.label[0].text}}</a>
                     <span
                       class="dropdown__trigger"
                       v-if="item.items.length > 0"
@@ -51,10 +51,10 @@
                           <div class="dropdown__content col-lg-2">
                             <ul class="menu-vertical">
                               <li v-for="(subitem, indexs) in item.items" :key="indexs">
-                                <nuxt-link
+                                <a
                                   v-if="subitem.sub_nav_link_label.length>0"
-                                  :to="subitem.sub_navi_link"
-                                >{{subitem.sub_nav_link_label[0].text}}</nuxt-link>
+                                  :href="subitem.sub_navi_link"
+                                >{{subitem.sub_nav_link_label[0].text}}</a>
                               </li>
                             </ul>
                           </div>
@@ -67,9 +67,9 @@
             </div>
             <div class="col-lg-5 text-right text-left-xs text-left-sm order-lg-3">
               <div class="bar__module">
-                  <nuxt-link class="btn btn--sm type--uppercase btn--primary" :to="`/contact/`">
+                  <a class="btn btn--sm type--uppercase btn--primary" :href="`/contact/`">
                     <span class="btn__text">Contact us</span>
-                  </nuxt-link>               
+                  </a>               
               </div>
             </div>
           </div>

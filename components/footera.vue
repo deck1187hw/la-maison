@@ -8,19 +8,19 @@
         <div class="col-sm-6">
           <ul class="list-inline list--hover">
             <li>
-              <nuxt-link to="/about/">
+              <a href="/about/">
                 <span class="h6 type--uppercase">About us</span>
-              </nuxt-link>
+              </a>
             </li>
             <li>
-              <nuxt-link to="/contact/">
+              <a href="/contact/">
                 <span class="h6 type--uppercase">Contact</span>
-              </nuxt-link>
+              </a>
             </li>
             <li>
-              <nuxt-link to="/menus/">
+              <a href="/menus/">
                 <span class="h6 type--uppercase">Our Menus</span>
-              </nuxt-link>
+              </a>
             </li>
           </ul>
            <div class="">
@@ -42,8 +42,8 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-                  <nuxt-link to="/privacy/" class="type--fine-print">
-           <span>Privacy Policy</span></nuxt-link>
+                  <a href="/privacy/" class="type--fine-print">
+           <span>Privacy Policy</span></a>
 
 
              <a href="/sitemap.xml" class="type--fine-print" target="_blank">

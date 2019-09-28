@@ -26,9 +26,9 @@
           <div class="col-lg-5 col-md-7">
             <h2>{{item.data.title[0].text}}</h2>        
             <p>
-              <nuxt-link class="btn btn--lg type--uppercase btn--primary" :to="`/menus/${item.uid}`">
+              <a class="btn btn--lg type--uppercase btn--primary" :href="`/menus/${item.uid}`">
                 <span class="btn__text">View menu</span>
-              </nuxt-link>
+              </a>
             </p>
             <p v-if="item.data.pdf_menu.url">
                 <i class="icon-doc icons"></i>

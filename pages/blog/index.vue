@@ -25,17 +25,17 @@
                   :key="index"
                 >
                   <article class="feature feature-1">
-                    <nuxt-link :to="`/blog/${item.uid}`" class="block wrpimg">
+                    <a :href="`/blog/${item.uid}`" class="block wrpimg">
                       <b-img
                         :src="item.data.main_image.url"
                         fluid
                         :alt="item.data.title[0].text"
                         class="img-bl"
                       ></b-img>
-                    </nuxt-link>
+                    </a>
                     <div class="feature__body boxed boxed--border">
                       <h5>{{item.data.title[0].text}}</h5>
-                      <nuxt-link :to="`/blog/${item.uid}`">Read more</nuxt-link>
+                      <a href="`/blog/${item.uid}`">Read more</a>
                     </div>
                   </article>
                 </div>

@@ -7,9 +7,9 @@
             <div class="col"><h1>Thank you for contacting us</h1>
             <p class="lead">We will get back to you shortly</p>
             <p class="lead">
-                 <nuxt-link to="/">
+                 <a href="/">
                 <span class="">Go back to the homepage</span>
-              </nuxt-link>
+              </a>
 
             </p>
             </div>
