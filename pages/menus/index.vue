@@ -50,6 +50,15 @@ export default {
       document: null
     };
   },
+
+  head () {
+    return {
+      title: 'Our menus - La Maison Catering',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Menus tailored for your specific needs, ask us for more.' }
+      ]
+    }
+  },
   created() {
     if (process.browser) {
       let sc1 = document.createElement("script");

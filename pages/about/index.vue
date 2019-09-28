@@ -32,6 +32,14 @@ export default {
   components: {
     Contentprismic
   },
+  head () {
+    return {
+      title: 'About us - La Maison Catering',
+      meta: [
+        { hid: 'description', name: 'description', content: 'We are a young, dedicated couple, qualified and experienced chefs, who bring the ancient cooking techniques and styles into our present rushing lifestyle. Be it on a small family gathering, for friends or a street party.' }
+      ]
+    }
+  },
   data: function() {
     return {
       document: null,

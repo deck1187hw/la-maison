@@ -43,6 +43,14 @@ export default {
       document: null
     };
   },
+  head () {
+    return {
+      title: 'Our Blog - La Maison Catering',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Get the last trends on BBQ and catering.' }
+      ]
+    }
+  },
   created() {},
   async asyncData({ context, error, req }) {
     try {

@@ -21,6 +21,14 @@ export default {
   components: {
     Contentprismic
   },
+  head () {
+    return {
+      title: 'Privacy policy - La Maison Catering',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Because our client´s data and privacy is important for us.' }
+      ]
+    }
+  },
   data: function() {
     return {
       document: null,

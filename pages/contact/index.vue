@@ -121,6 +121,14 @@ export default {
       menus: null
     };
   },
+  head () {
+    return {
+      title: 'Contact Us - La Maison Catering',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Get in touch with us and request a quote now!' }
+      ]
+    }
+  },
   methods: {},
   computed: {
     validForm() {
