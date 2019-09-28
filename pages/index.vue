@@ -26,7 +26,7 @@
         <div class="row justify-content-between">
           <div class="col-md-6">
             <div class="heading-block">
-              <h2>Catering Service in Sussex</h2>
+              <h1>Catering Service in Sussex</h1>
             </div>
             <div class="text-block">
               <p class="lead">

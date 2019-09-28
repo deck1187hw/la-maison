@@ -14,6 +14,16 @@ export default {
     navmenu,
     footera
   },
+  head() {
+    return {
+      link: [
+        {
+          rel: 'canonical',
+          href: 'https://lamaisonmobilecatering.com' + this.$route.path,
+        },
+      ],
+    }
+  },
   created() {},
   mounted() {}
 };

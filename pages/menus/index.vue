@@ -1,5 +1,15 @@
 <template>
   <div class="main-container">
+     <section class="bg--primary bg-maison space--sm">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h1>Discover our menus</h1>
+            <p class="lead">Get in touch with us If you need any specific requirements</p>
+          </div>
+        </div>
+      </div>
+     </section>
     <section
       class="imageblock switchable feature-large bg--secondary space--xs bg-maison__white"
       v-for="(item, index) in document.results"
