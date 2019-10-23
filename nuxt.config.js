@@ -104,7 +104,6 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://lamaisonmobilecatering.com',
-    generate: true,
     exclude: [
       '/contact/success'
     ],
