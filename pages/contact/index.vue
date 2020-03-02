@@ -11,6 +11,14 @@
             <hr />
             <h5>Follow us</h5>
             <Social />
+            <hr />
+               <a
+            target="_parent"
+            href="https://www.addtoevent.co.uk/la-maison-mobile-bbq-and-catering-service"
+            ><img
+              src="https://www.addtoevent.co.uk/sites/default/files/badges/top_rated_circular_white_medium.png"
+              alt="Add To Event Featured Supplier"
+          /></a>
           </div>
           <div class="col-md-6">
             <div class="boxed boxed--lg boxed--border bg--secondary">
