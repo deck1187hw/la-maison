@@ -1,5 +1,44 @@
 <template>
   <div class="main-container">
+
+<section class="text-center bg--dark space--xxs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-lg-8">
+                            <h1>Coronavirus (COVID-19)</h1>
+                            <p class="lead"> What you need to do. </p>
+<ul>
+  <li>
+Stay at home
+  </li>
+    <li>
+Only go outside for food, health reasons or work (but only if you cannot work from home)
+  </li>
+    <li>
+If you go out, stay 2 metres (6ft) away from other people at all times
+  </li>
+    <li>
+
+Wash your hands as soon as you get home
+  </li>    <li>
+
+Do not meet others, even friends or family.
+  </li><li>
+
+You can spread the virus even if you don’t have symptoms.
+  </li>
+</ul>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
     <section class="cover imagebg text-center height-80 section--ken-burns" data-overlay="5">
       <div class="background-image-holder">
         <b-img :src="document.heading_image.url"></b-img>
@@ -21,6 +60,9 @@
         <b-img alt="Food Hygiene Rating 5 - La Maison BBQ" src="https://maisonbbq.cdn.prismic.io/maisonbbq/9f1fd00f2d122d7047be9022d2763f69204282f9_food-300x198.jpg" fluid ></b-img>
       </div>
     </section>
+
+
+    
     <section class="bg--primary bg-maison space--sm">
       <div class="container">
         <div class="row justify-content-between">
@@ -48,6 +90,7 @@
         </div>
       </div>
     </section>
+    
     <section class="imagebg space--md section--ken-burns space--sm" data-overlay="5">
       <div class="background-image-holder">
         <b-img :src="document.image_section_2.url" class="border--round"></b-img>

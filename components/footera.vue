@@ -1,8 +1,8 @@
 <template>
   <footer class="space--sm footer-1 text-center-xs bg--dark">
-    <client-only>
+    <no-ssr>
       <cookie-law theme="dark-lime"></cookie-law>
-    </client-only>
+    </no-ssr>
     <div class="container">
       <div class="row text-center">
         <div class="col-sm-12"></div>
@@ -74,10 +74,10 @@
   </footer>
 </template>
 <script>
-import CookieLaw from "vue-cookie-law";
+
 import Social from "~/components/Social.vue";
 export default {
-  components: { CookieLaw, Social },
+  components: {  Social },
   data: function() {
     return {
       document: {

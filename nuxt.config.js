@@ -64,7 +64,6 @@ export default {
     "~/plugins/html-serializer.js",
     "~/plugins/vue-social-sharing.js",
     "~/plugins/prismic-vue.js",
-    "~/plugins/vue-moment.js",
     { src: '~plugins/vue-cookie-law.js', ssr: false }
   ],
   /*
@@ -80,7 +79,7 @@ export default {
     "@nuxtjs/axios",
     "nuxt-simple-line-icons",
     "@nuxtjs/pwa",
-    "@nuxtjs/moment",
+    '@nuxtjs/moment',
     [
       "@nuxtjs/google-analytics",
       {

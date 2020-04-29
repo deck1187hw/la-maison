@@ -14,7 +14,7 @@
               <div class="col-md-12">
                 <div class="article__title">
                   <h1>{{document.title[0].text}}</h1>
-                  <span>{{ document.date | moment('LL') }}</span>
+                  <span>{{  $moment(document.date).format('LL') }}</span>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import moment from "moment";
+
 import Prismic from "prismic-javascript";
 import PrismicConfig from "~/prismic.config.js";
 import Contentprismic from "~/components/Contentprismic.vue";
