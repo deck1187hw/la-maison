@@ -34,6 +34,7 @@
     "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt",
     "simple-line-icons": "^2.4.1",
     "vue-cookie-law": "^1.13.3",
+    "vue-fb-customer-chat": "^0.2.0",
     "vue-moment": "^4.1.0",
     "vue-social-sharing": "^2.4.7"
   },

@@ -62,9 +62,10 @@ export default {
   plugins: [
     "~/plugins/link-resolver.js",
     "~/plugins/html-serializer.js",
-    "~/plugins/vue-social-sharing.js",
+    "~/plugins/vue-social-sharing.js",    
     "~/plugins/prismic-vue.js",
-    { src: '~plugins/vue-cookie-law.js', ssr: false }
+    { src: '~plugins/vue-cookie-law.js', ssr: false },
+    { src: '~/plugins/vue-fb-customer-chat.js', ssr: false },
   ],
   /*
    ** Nuxt.js dev-modules
