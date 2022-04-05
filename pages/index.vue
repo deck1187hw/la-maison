@@ -5,30 +5,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 col-lg-8">
-                            <h1>Coronavirus (COVID-19)</h1>
-                            <p class="lead"> What you need to do. </p>
-<ul>
-  <li>
-Stay at home
-  </li>
-    <li>
-Only go outside for food, health reasons or work (but only if you cannot work from home)
-  </li>
-    <li>
-If you go out, stay 2 metres (6ft) away from other people at all times
-  </li>
-    <li>
-
-Wash your hands as soon as you get home
-  </li>    <li>
-
-Do not meet others, even friends or family.
-  </li><li>
-
-You can spread the virus even if you don’t have symptoms.
-  </li>
-</ul>
-
+                   
+                            <p class="lead"> 
+                            
+                            Our priority is the health and well-being of our staff and customers. During our services, we have put in place a number of measures to keep everyone safe.
+                            </p>
 
 
 
