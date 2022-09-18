@@ -35,7 +35,7 @@
           
           <div class="">
               <b-img
-              alt="Seaheaven Business Awards 2022"
+              alt="Seaheaven Business Awards 2022" width="120" style="margin-top:20px"
               src="https://images.prismic.io/maisonbbq/6bbbe44f-ce56-4492-a160-b38aae7ab9e6_winners_logo2022.jpg?auto=compress,format"
             ></b-img>
           </div>
