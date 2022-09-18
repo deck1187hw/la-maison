@@ -32,6 +32,13 @@
             <br />
             Phone: <a :href="`tel:${document.phone}`">{{ document.phone }}</a>
           </div>
+          
+          <div class="">
+              <b-img
+              alt="Seaheaven Business Awards 2022"
+              src="https://images.prismic.io/maisonbbq/6bbbe44f-ce56-4492-a160-b38aae7ab9e6_winners_logo2022.jpg?auto=compress,format"
+            ></b-img>
+          </div>
         </div>
 
         <div class="col-sm-6 text-right-md text-center-xs">
@@ -43,6 +50,9 @@
               src="https://prismic-io.s3.amazonaws.com/maisonbbq%2F57697e84-aca3-4d51-b8b7-9338d8617871_logoa.png"
             ></b-img>
           </a>
+          
+    
+          
           <a
             target="_parent"
             href="https://www.addtoevent.co.uk/la-maison-mobile-bbq-and-catering-service"
